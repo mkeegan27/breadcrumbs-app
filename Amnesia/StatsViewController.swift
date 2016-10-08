@@ -11,10 +11,11 @@ import Charts
 
 
 class StatsViewController: UIViewController {
+    @IBOutlet weak var barChart: BarChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
