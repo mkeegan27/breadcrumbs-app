@@ -11,6 +11,7 @@ import MapKit
 import CoreLocation
 
 var allLocations = Locations()
+var dataPoints = [DataPoint]()
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -94,7 +95,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             {
                 thisLocation = locationName
                 if thisLocation != "" {
-                    print(NSDate())
+                    dataPoints.append(DataPoint(lat: location.coordinate.latitude, long: location.coordinate.longitude, timestamp: NSDate(), locName: locationName))
                     allLocations.addLocation(location: thisLocation, timestamp: NSDate(), coord: location)
 					LogMgr.addLoc(locNew:location, locationNameNew: thisLocation, timeBeginNew: 0, timeEndNew: 0)
 
