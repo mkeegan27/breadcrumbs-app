@@ -1,15 +1,10 @@
-core data
+-title
+-settings to actually do something
+-add more settings
+-maybe improve charts
+-delete/edit elements
+-make cells look nicer
+-change label to time interval
 
-points on map
-
-charts
-
-timestamps for locations
-
-ui elements (nicer labels, icons, etc)
-
-reverse order of elements
-
-edit names of places (in case it's just street address)
-
-settings
+extras:
+-search

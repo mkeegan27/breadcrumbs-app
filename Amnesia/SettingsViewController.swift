@@ -12,12 +12,12 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var segCtrl: UISegmentedControl!
     
+    @IBOutlet weak var saveButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let attr = NSDictionary(object: UIFont(name: "Arial", size: 12.0)!, forKey: NSFontAttributeName as NSCopying)
         segCtrl.setTitleTextAttributes(attr as? [AnyHashable : Any], for: .normal)
-        //segCtrl.setTitleTextAttributes(<#T##attributes: [AnyHashable : Any]?##[AnyHashable : Any]?#>, for: <#T##UIControlState#>)
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +26,34 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        let sel: Int = segCtrl.selectedSegmentIndex
+        if(sel==0){
+            timeCheckInt = 1
+        }
+        else if(sel==1){
+            timeCheckInt = 5
+        }
+        else if(sel==2){
+            timeCheckInt = 60
+        }
+        else if(sel==3){
+            timeCheckInt = 120
+        }
+        else if(sel==4){
+            timeCheckInt = 300
+        }
+        else if(sel==5){
+            timeCheckInt = 1800
+        }
+        else if(sel==5){
+            timeCheckInt = 3600
+        }
+        else{
+            timeCheckInt = 7200
+        }
+        
+    }
 
     /*
     // MARK: - Navigation

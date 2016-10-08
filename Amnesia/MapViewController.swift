@@ -12,6 +12,7 @@ import CoreLocation
 
 var allLocations = Locations()
 var newLocations = LocationData()
+var count: Int = 0
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -107,8 +108,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             map.addAnnotation(newAnotation)
         }
         
-        reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
-        
+        if(count==timeCheckInt){
+            reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
+            count = 0
+        }
+        count+=1
         
     }
     

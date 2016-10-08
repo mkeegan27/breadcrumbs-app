@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+var timeCheckInt: Int = 1
+
 struct DataPoint {
     let lat:CLLocationDegrees
     let long:CLLocationDegrees
@@ -31,7 +33,7 @@ struct LocationData {
         if dataPoints.count > 0 {
             if dataPoints.last!.locName == locName {
                 var last = dataPoints.removeLast()
-                last.timeSpent += 1
+                last.timeSpent += timeCheckInt
                 if last.timeSpent > longestTime {
                     longestTime = last.timeSpent
                 }
