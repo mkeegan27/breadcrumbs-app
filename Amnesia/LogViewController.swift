@@ -104,10 +104,11 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.tblV.dequeueReusableCell(withIdentifier: "LogCell") as! LogTableViewCell
+        let timeSpent = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].timeSpent
         
         cell.changeLabelText(newText: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)
-        cell.changeTimeText(newText: getTimeLabel(secs: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].timeSpent))
-        
+        cell.changeTimeText(newText: getTimeLabel(secs: timeSpent))
+        cell.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 122/255, blue: 254/255, alpha: Float(timeSpent)/Float(newLocations.longestTime)*0.8)
         return cell
     }
     
