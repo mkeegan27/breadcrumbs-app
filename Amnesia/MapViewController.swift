@@ -75,7 +75,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             // Place details
             var placeMark: CLPlacemark!
             placeMark = placeArray?[0]
-            
+            if placeMark == nil {
+                return
+            }
             // Location name
             if let locationName = placeMark.addressDictionary?["Name"] as? String
             {
