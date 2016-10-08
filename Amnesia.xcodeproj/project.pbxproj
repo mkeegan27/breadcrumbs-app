@@ -15,6 +15,8 @@
 		1F6F30021DA9418000845659 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F30011DA9418000845659 /* LogViewController.swift */; };
 		1F6F30041DA9428700845659 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F30031DA9428700845659 /* LogTableViewCell.swift */; };
 		86C41B991DA946030006FBAF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41B981DA946030006FBAF /* MapKit.framework */; };
+		86C41B9B1DA947190006FBAF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C41B9A1DA947190006FBAF /* MapViewController.swift */; };
+		86C41B9D1DA947430006FBAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41B9C1DA947430006FBAF /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		1F6F30011DA9418000845659 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		1F6F30031DA9428700845659 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
 		86C41B981DA946030006FBAF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		86C41B9A1DA947190006FBAF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		86C41B9C1DA947430006FBAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C41B9D1DA947430006FBAF /* CoreLocation.framework in Frameworks */,
 				86C41B991DA946030006FBAF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +70,7 @@
 				1F6F2FFF1DA9400E00845659 /* LogManager.swift */,
 				1F6F2FEB1DA93CC200845659 /* AppDelegate.swift */,
 				1F6F2FEF1DA93CC200845659 /* Main.storyboard */,
+				86C41B9A1DA947190006FBAF /* MapViewController.swift */,
 				1F6F30031DA9428700845659 /* LogTableViewCell.swift */,
 				1F6F30011DA9418000845659 /* LogViewController.swift */,
 				1F6F2FF21DA93CC200845659 /* Assets.xcassets */,
@@ -77,6 +83,7 @@
 		86C41B971DA946030006FBAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86C41B9C1DA947430006FBAF /* CoreLocation.framework */,
 				86C41B981DA946030006FBAF /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -116,6 +123,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = X3JL3ZSTWS;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -158,6 +170,7 @@
 				1F6F30001DA9400E00845659 /* LogManager.swift in Sources */,
 				1F6F2FEC1DA93CC200845659 /* AppDelegate.swift in Sources */,
 				1F6F30041DA9428700845659 /* LogTableViewCell.swift in Sources */,
+				86C41B9B1DA947190006FBAF /* MapViewController.swift in Sources */,
 				1F6F30021DA9418000845659 /* LogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
