@@ -129,6 +129,9 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             allLocations.allLocations.removeValue(forKey: LogMgr.logset[indexPath.row].locationName)
             LogMgr.logset.remove(at: indexPath.row)
             self.tblV.reloadData()
+            
+            //delete function does not work all the time
+            //also does not delete map annotations
         }
         return [delete]
 //        LogMgr.logset.remove(at: indexPath.row)
