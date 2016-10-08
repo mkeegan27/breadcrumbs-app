@@ -100,13 +100,14 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return allLocations.toArray().count
+        return newLocations.dataPoints.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.tblV.dequeueReusableCell(withIdentifier: "LogCell") as! LogTableViewCell
         
-        cell.changeLabelText(newText: allLocations.toArray()[indexPath.row])
-        cell.changeTimeText(newText: String(allLocations.getLocAtIndex(ind: indexPath.row).seconds))
+        cell.changeLabelText(newText: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)
+        cell.changeTimeText(newText: getTimeLabel(secs: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].timeSpent))
+        
         return cell
     }
     
@@ -139,14 +140,27 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func getTimeLabel(secs: Int) -> String {
+        if secs < 60 {
+            return "\(secs) seconds"
+        } else if secs < 3600 {
+            if secs/60 == 1 {
+                return "\(secs/60) minute"
+            }
+            return "\(secs/60) minutes"
+        } else if secs < 3600*24 {
+            if secs/3600 == 1 {
+                return "\(secs/3600) hour"
+            }
+            return "\(secs/3600) hours"
+        } else {
+            if secs/3600/24 == 1 {
+                return "\(secs/3600/24) day"
+            }
+            return "\(secs/3600/24) days"
+        }
     }
-    */
 
+    
+    
 }
