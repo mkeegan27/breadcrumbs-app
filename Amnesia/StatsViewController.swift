@@ -15,17 +15,26 @@ class StatsViewController: UIViewController {
 
     var dataTypes = [String]()
     var data = [Double]()
+    var colors = [UIColor]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setChartData()
-
-        
         setChart(dataPoints: dataTypes, values: data)
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        var dataTypes = [String]()
+        var data = [Double]()
+        var colors = [UIColor]()
+        setChartData()
+        setChart(dataPoints: dataTypes, values: data)
+    }
+    
+    
     func setChart(dataPoints: [String], values: [Double]){
         
         
