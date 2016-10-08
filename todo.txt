@@ -11,3 +11,5 @@ ui elements (nicer labels, icons, etc)
 reverse order of elements
 
 edit names of places (in case it's just street address)
+
+settings
