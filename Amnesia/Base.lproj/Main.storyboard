@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="-854" y="637"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="N1E-sr-ygm">
             <objects>
                 <viewController id="GFw-tQ-bok" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="MaV-xW-qJI"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="MaV-xW-qJI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4h6-fy-KiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
