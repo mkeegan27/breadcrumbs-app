@@ -42,6 +42,7 @@ class StatsViewController: UIViewController {
         var dataEntries: [BarChartDataEntry] = []
         print(dataPoints.count)
         for i in 0..<dataPoints.count {
+            let newDataEntry = BarChartDataEntry()
             let dataEntry = BarChartDataEntry(x: Double(i), yValues: [data[i]], label: dataTypes[i])
             dataEntries.append(dataEntry)
         }
@@ -49,7 +50,7 @@ class StatsViewController: UIViewController {
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Number of votes")
         let chartData = BarChartData(dataSet: chartDataSet)
         chartData.setValueFont(UIFont(name: "Avenir", size: 13))
-        chartData.setValueTextColor(UIColor.white)
+        chartData.setValueTextColor(UIColor.black)
         //        chartData.setValueFormatter(NSNumberFormatter())
         chartData.setDrawValues(false)
         barChartView.leftAxis.axisMinValue = 0
@@ -57,12 +58,12 @@ class StatsViewController: UIViewController {
         barChartView.descriptionText = ""
         barChartView.xAxis.labelPosition = .bottom
         barChartView.xAxis.labelFont = UIFont(name: "Avenir", size: 14)!
-        barChartView.xAxis.labelTextColor = UIColor.white
+        barChartView.xAxis.labelTextColor = UIColor.black
         barChartView.rightAxis.enabled = false
         barChartView.legend.enabled = false
-        barChartView.legend.textColor = UIColor.white
+        barChartView.legend.textColor = UIColor.black
         barChartView.leftAxis.enabled = true
-        barChartView.leftAxis.labelTextColor = UIColor.white
+        barChartView.leftAxis.labelTextColor = UIColor.black
         barChartView.highlightPerTapEnabled = false
         barChartView.doubleTapToZoomEnabled = false
         barChartView.data?.highlightEnabled = false
@@ -72,7 +73,7 @@ class StatsViewController: UIViewController {
         barChartView.leftAxis.gridColor = UIColor.lightGray
         
         
-        chartDataSet.colors = [UIColor(red: 135/255, green: 206/255, blue: 250/255, alpha: 1), UIColor(red: 1, green: 0.80, blue: 0.82, alpha: 1), UIColor.gray]
+        chartDataSet.colors = colors
         barChartView.backgroundColor = UIColor.clear
         barChartView.animate(yAxisDuration: 2.0)
         
@@ -88,10 +89,14 @@ class StatsViewController: UIViewController {
             dataTypes.append(dataPoint.locationName)
             data.append(Double(dataPoint.seconds))
         }
+        setColors(i: allLocations.allLocations.count)
     }
     
     func setColors(i:Int) {
-//        for x in
+        for x in 1...i {
+            let value = 1.0 - Double(x)/Double(i)
+            colors.append(UIColor(white: CGFloat(value), alpha: 1.0))
+        }
     }
 
 }
