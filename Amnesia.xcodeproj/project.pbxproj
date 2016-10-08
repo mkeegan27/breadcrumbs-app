@@ -19,6 +19,8 @@
 		86C41B9D1DA947430006FBAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41B9C1DA947430006FBAF /* CoreLocation.framework */; };
 		86C41B9F1DA957560006FBAF /* LocationDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C41B9E1DA957560006FBAF /* LocationDataStructure.swift */; };
 		86C41BB51DA960500006FBAF /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C41BB41DA960500006FBAF /* StatsViewController.swift */; };
+		86C41BC21DA960C90006FBAF /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41BBD1DA960AB0006FBAF /* Charts.framework */; };
+		86C41BC31DA960C90006FBAF /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41BBD1DA960AB0006FBAF /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,13 @@
 			remoteGlobalIDString = 06165F2E1D8110E600722320;
 			remoteInfo = ChartsTests;
 		};
+		86C41BC41DA960C90006FBAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86C41BB61DA960AB0006FBAF /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				86C41BC31DA960C90006FBAF /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C41BC21DA960C90006FBAF /* Charts.framework in Frameworks */,
 				86C41B9D1DA947430006FBAF /* CoreLocation.framework in Frameworks */,
 				86C41B991DA946030006FBAF /* MapKit.framework in Frameworks */,
 			);
@@ -159,6 +170,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				86C41BC51DA960C90006FBAF /* PBXTargetDependency */,
 			);
 			name = Amnesia;
 			productName = Amnesia;
@@ -264,6 +276,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86C41BC51DA960C90006FBAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 86C41BC41DA960C90006FBAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1F6F2FEF1DA93CC200845659 /* Main.storyboard */ = {
