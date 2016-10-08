@@ -106,7 +106,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let cell = self.tblV.dequeueReusableCell(withIdentifier: "LogCell") as! LogTableViewCell
         
         cell.changeLabelText(newText: allLocations.toArray()[indexPath.row])
-        
+        cell.changeTimeText(newText: String(allLocations.getLocAtIndex(ind: indexPath.row).seconds))
         return cell
     }
     

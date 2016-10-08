@@ -36,6 +36,10 @@ struct Locations {
         return stringArr
     }
     
+    func getLocAtIndex(ind: Int) -> Alocation{
+        return allLocations[self.toArray()[ind]]!
+    }
+    
 }
 
 struct Alocation {

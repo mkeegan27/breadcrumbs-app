@@ -11,6 +11,7 @@ import UIKit
 class LogTableViewCell: UITableViewCell {
     
     @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,10 @@ class LogTableViewCell: UITableViewCell {
     
     func changeLabelText(newText: String){
         testLabel.text = newText
+    }
+    
+    func changeTimeText(newText: String){
+        timeLabel.text = newText
     }
 
 }
