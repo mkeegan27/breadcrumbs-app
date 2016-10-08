@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 import CoreLocation
 
+var locations = Locations()
+
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     
@@ -78,35 +80,42 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if placeMark == nil {
                 return
             }
+            
+            var thisLocation = ""
             // Location name
             if let locationName = placeMark.addressDictionary?["Name"] as? String
             {
-                print(locationName)
+                thisLocation = locationName
+                if thisLocation != "" {
+                    locations.addLocation(location: thisLocation)
+                }
+                
+                print(locations.allLocations)
             }
-
-            // Street address
-            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
-            {
-                print(street)
-            }
-            
-            // City
-            if let city = placeMark.addressDictionary?["City"] as? NSString
-            {
-                print(city)
-            }
-            
-            // Zip code
-            if let zip = placeMark.addressDictionary?["ZIP"] as? NSString
-            {
-                print(zip)
-            }
-            
-            // Country
-            if let country = placeMark.addressDictionary?["Country"] as? NSString
-            {
-                print(country)
-            }
+            print(locations)
+//            // Street address
+//            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
+//            {
+//                print(street)
+//            }
+//            
+//            // City
+//            if let city = placeMark.addressDictionary?["City"] as? NSString
+//            {
+//                print(city)
+//            }
+//            
+//            // Zip code
+//            if let zip = placeMark.addressDictionary?["ZIP"] as? NSString
+//            {
+//                print(zip)
+//            }
+//            
+//            // Country
+//            if let country = placeMark.addressDictionary?["Country"] as? NSString
+//            {
+//                print(country)
+//            }
         }
     }
     
