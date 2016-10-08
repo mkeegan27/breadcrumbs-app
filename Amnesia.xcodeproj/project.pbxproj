@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		1F6F2FEC1DA93CC200845659 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F2FEB1DA93CC200845659 /* AppDelegate.swift */; };
-		1F6F2FEE1DA93CC200845659 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F2FED1DA93CC200845659 /* ViewController.swift */; };
 		1F6F2FF11DA93CC200845659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F2FEF1DA93CC200845659 /* Main.storyboard */; };
 		1F6F2FF31DA93CC200845659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F2FF21DA93CC200845659 /* Assets.xcassets */; };
 		1F6F2FF61DA93CC200845659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F2FF41DA93CC200845659 /* LaunchScreen.storyboard */; };
 		1F6F30001DA9400E00845659 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F2FFF1DA9400E00845659 /* LogManager.swift */; };
+		1F6F30021DA9418000845659 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F30011DA9418000845659 /* LogViewController.swift */; };
+		1F6F30041DA9428700845659 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F30031DA9428700845659 /* LogTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F6F2FE81DA93CC200845659 /* Amnesia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amnesia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6F2FEB1DA93CC200845659 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F6F2FED1DA93CC200845659 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F6F2FF01DA93CC200845659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F6F2FF21DA93CC200845659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F6F2FF51DA93CC200845659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F6F2FF71DA93CC200845659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F6F2FFF1DA9400E00845659 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		1F6F2FFF1DA9400E00845659 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogManager.swift; path = ../LogManager.swift; sourceTree = "<group>"; };
+		1F6F30011DA9418000845659 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		1F6F30031DA9428700845659 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +42,6 @@
 		1F6F2FDF1DA93CC200845659 = {
 			isa = PBXGroup;
 			children = (
-				1F6F2FFF1DA9400E00845659 /* LogManager.swift */,
 				1F6F2FEA1DA93CC200845659 /* Amnesia */,
 				1F6F2FE91DA93CC200845659 /* Products */,
 			);
@@ -57,9 +58,11 @@
 		1F6F2FEA1DA93CC200845659 /* Amnesia */ = {
 			isa = PBXGroup;
 			children = (
+				1F6F2FFF1DA9400E00845659 /* LogManager.swift */,
 				1F6F2FEB1DA93CC200845659 /* AppDelegate.swift */,
-				1F6F2FED1DA93CC200845659 /* ViewController.swift */,
 				1F6F2FEF1DA93CC200845659 /* Main.storyboard */,
+				1F6F30031DA9428700845659 /* LogTableViewCell.swift */,
+				1F6F30011DA9418000845659 /* LogViewController.swift */,
 				1F6F2FF21DA93CC200845659 /* Assets.xcassets */,
 				1F6F2FF41DA93CC200845659 /* LaunchScreen.storyboard */,
 				1F6F2FF71DA93CC200845659 /* Info.plist */,
@@ -141,8 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F6F30001DA9400E00845659 /* LogManager.swift in Sources */,
-				1F6F2FEE1DA93CC200845659 /* ViewController.swift in Sources */,
 				1F6F2FEC1DA93CC200845659 /* AppDelegate.swift in Sources */,
+				1F6F30041DA9428700845659 /* LogTableViewCell.swift in Sources */,
+				1F6F30021DA9418000845659 /* LogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
