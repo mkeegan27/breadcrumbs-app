@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import AddressBookUI
 
 class LogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -23,7 +24,8 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         var latitude :CLLocationDegrees = 42.391075
         
         var location = CLLocation(latitude: latitude, longitude: longitude) //changed!!!
-        print(location)
+        //print(location)
+        
         
         CLGeocoder().reverseGeocodeLocation(location)
         {
@@ -35,38 +37,45 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             var placeMark: CLPlacemark!
             placeMark = placeArray?[0]
             
+            print(ABCreateStringWithAddressDictionary(placeMark.addressDictionary!, false))
+            
             // Address dictionary
-            print(placeMark.addressDictionary)
+            //print(placeMark.addressDictionary)
             
-            // Location name
-            if let locationName = placeMark.addressDictionary?["Name"] as? NSString
-            {
-                print(locationName)
-            }
-            
-            // Street address
-            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
-            {
-                print(street)
-            }
-            
-            // City
-            if let city = placeMark.addressDictionary?["City"] as? NSString
-            {
-                print(city)
-            }
-            
-            // Zip code
-            if let zip = placeMark.addressDictionary?["ZIP"] as? NSString
-            {
-                print(zip)
-            }
-            
-            // Country
-            if let country = placeMark.addressDictionary?["Country"] as? NSString
-            {
-                print(country)
-            }
+//            // Location name
+//            if let locationName = placeMark.addressDictionary?["Name"] as? NSString
+//            {
+//                print(locationName)
+//            }
+//            // subLocality KEY DOES NOT WORK
+//            if let locality = placeMark.addressDictionary?["SubLocality"] as? NSString
+//            {
+//                print(locality)
+//            }
+//
+//            // Street address
+//            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
+//            {
+//                print(street)
+//            }
+//            
+//            // City
+//            if let city = placeMark.addressDictionary?["City"] as? NSString
+//            {
+//                print(city)
+//            }
+//            
+//            // Zip code
+//            if let zip = placeMark.addressDictionary?["ZIP"] as? NSString
+//            {
+//                print(zip)
+//            }
+//            
+//            // Country
+//            if let country = placeMark.addressDictionary?["Country"] as? NSString
+//            {
+//                print(country)
+//            }
         }
     }
 
