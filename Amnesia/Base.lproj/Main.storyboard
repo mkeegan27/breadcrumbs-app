@@ -18,13 +18,22 @@
                     <view key="view" contentMode="scaleToFill" id="sJK-tD-GNG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOW-pj-ql7"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZOW-pj-ql7" secondAttribute="trailing" id="7Qr-sL-kIT"/>
+                            <constraint firstItem="ZOW-pj-ql7" firstAttribute="leading" secondItem="sJK-tD-GNG" secondAttribute="leading" id="EWJ-jo-5MU"/>
+                            <constraint firstItem="ZOW-pj-ql7" firstAttribute="top" secondItem="sJK-tD-GNG" secondAttribute="top" id="sq4-12-sEn"/>
+                            <constraint firstAttribute="bottom" secondItem="ZOW-pj-ql7" secondAttribute="bottom" id="ttf-MV-3jo"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="g6l-e9-drk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n00-hN-LEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-606" y="85"/>
+            <point key="canvasLocation" x="-607.20000000000005" y="84.107946026986511"/>
         </scene>
         <!--LogViewController-->
         <scene sceneID="Qrl-Dw-GnF">

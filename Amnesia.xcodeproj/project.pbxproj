@@ -14,6 +14,7 @@
 		1F6F30001DA9400E00845659 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F2FFF1DA9400E00845659 /* LogManager.swift */; };
 		1F6F30021DA9418000845659 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F30011DA9418000845659 /* LogViewController.swift */; };
 		1F6F30041DA9428700845659 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F30031DA9428700845659 /* LogTableViewCell.swift */; };
+		86C41B991DA946030006FBAF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41B981DA946030006FBAF /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1F6F2FFF1DA9400E00845659 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogManager.swift; path = ../LogManager.swift; sourceTree = "<group>"; };
 		1F6F30011DA9418000845659 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		1F6F30031DA9428700845659 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
+		86C41B981DA946030006FBAF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C41B991DA946030006FBAF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				1F6F2FEA1DA93CC200845659 /* Amnesia */,
 				1F6F2FE91DA93CC200845659 /* Products */,
+				86C41B971DA946030006FBAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +72,14 @@
 				1F6F2FF71DA93CC200845659 /* Info.plist */,
 			);
 			path = Amnesia;
+			sourceTree = "<group>";
+		};
+		86C41B971DA946030006FBAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86C41B981DA946030006FBAF /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +322,7 @@
 				1F6F2FFC1DA93CC200845659 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
