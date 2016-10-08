@@ -20,16 +20,15 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setChartData()
-        setChart(dataPoints: dataTypes, values: data)
+//        setChartData()
+//        setChart(dataPoints: dataTypes, values: data)
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        var dataTypes = [String]()
-        var data = [Double]()
-        var colors = [UIColor]()
+        dataTypes = [String]()
+        data = [Double]()
+        colors = [UIColor]()
         setChartData()
         setChart(dataPoints: dataTypes, values: data)
     }
@@ -46,7 +45,7 @@ class StatsViewController: UIViewController {
             let dataEntry = BarChartDataEntry(x: Double(i), yValues: [data[i]], label: dataTypes[i])
             dataEntries.append(dataEntry)
         }
-        
+        print("THIS IS HTE BARCHART ENTRY\(dataEntries)")
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Number of votes")
         let chartData = BarChartData(dataSet: chartDataSet)
         chartData.setValueFont(UIFont(name: "Avenir", size: 13))
@@ -89,6 +88,10 @@ class StatsViewController: UIViewController {
             dataTypes.append(dataPoint.locationName)
             data.append(Double(dataPoint.seconds))
         }
+    }
+    
+    func setColors(i:Int) {
+//        for x in
     }
 
 }

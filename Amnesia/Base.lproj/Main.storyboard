@@ -25,9 +25,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Qyq-zz-p3D" firstAttribute="top" secondItem="yUV-Ew-V8V" secondAttribute="bottom" id="9Ge-Tm-f3P"/>
                             <constraint firstItem="yUV-Ew-V8V" firstAttribute="leading" secondItem="YgB-GI-xFo" secondAttribute="leading" id="Eou-Xg-DSs"/>
                             <constraint firstAttribute="trailing" secondItem="yUV-Ew-V8V" secondAttribute="trailing" id="MLA-zr-lm6"/>
-                            <constraint firstAttribute="bottom" secondItem="yUV-Ew-V8V" secondAttribute="bottom" id="gOA-Ud-ZQA"/>
                             <constraint firstItem="yUV-Ew-V8V" firstAttribute="top" secondItem="YgB-GI-xFo" secondAttribute="top" id="wF3-gH-eQR"/>
                         </constraints>
                     </view>
@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ply-8P-bQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1335" y="574"/>
+            <point key="canvasLocation" x="-1335.2" y="573.46326836581716"/>
         </scene>
         <!--MapViewController-->
         <scene sceneID="U8U-Y8-tRy">
@@ -92,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Xy-E2-Thn" id="bFj-kh-fwf">
-                                            <frame key="frameInset" width="375" height="98.5"/>
+                                            <frame key="frameInset" width="375" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0p-hT-DNA">
