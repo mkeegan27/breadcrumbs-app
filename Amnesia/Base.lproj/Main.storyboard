@@ -10,7 +10,7 @@
         <!--MapViewController-->
         <scene sceneID="U8U-Y8-tRy">
             <objects>
-                <viewController title="MapViewController" id="eXW-kg-79l" sceneMemberID="viewController">
+                <viewController title="MapViewController" id="eXW-kg-79l" customClass="MapViewController" customModule="Amnesia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B6G-zy-aMd"/>
                         <viewControllerLayoutGuide type="bottom" id="zgc-ge-5zr"/>
@@ -30,6 +30,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="g6l-e9-drk"/>
+                    <connections>
+                        <outlet property="map" destination="ZOW-pj-ql7" id="KSG-fr-WlU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n00-hN-LEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
