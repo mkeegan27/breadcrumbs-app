@@ -88,14 +88,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //        }
         
         
-        for value in allLocations.allLocations.values{
+        for value in newLocations.dataPoints{
             
-            var newCoord:CLLocation = value.loc
+            let newCoord:CLLocation = CLLocation(latitude: value.lat, longitude: value.long)
             
-            var newAnotation = MKPointAnnotation()
+            let newAnotation = MKPointAnnotation()
             newAnotation.coordinate = newCoord.coordinate
-            newAnotation.title = value.locationName
-            newAnotation.subtitle = String(value.seconds)
+            newAnotation.title = value.locName
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm"
+            let str_from_date = dateFormatter.string(from: value.startTimestamp)
+            newAnotation.subtitle = "from " + str_from_date + " until " + dateFormatter.string(from: value.startTimestamp.addingTimeInterval(TimeInterval(value.timeSpent)))
             map.addAnnotation(newAnotation)
         }
         
@@ -128,7 +131,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             {
                 thisLocation = locationName
                 if thisLocation != "" {
-                    newLocations.addData(lat: location.coordinate.latitude, long: location.coordinate.longitude, timestamp: NSDate(), locName: thisLocation)
+                    newLocations.addData(lat: location.coordinate.latitude, long: location.coordinate.longitude, timestamp: Date(), locName: thisLocation)
                     allLocations.addLocation(location: thisLocation, timestamp: NSDate(), coord: location)
 					LogMgr.addLoc(locNew:location, locationNameNew: thisLocation, timeBeginNew: 0, timeEndNew: 0)
                 }
