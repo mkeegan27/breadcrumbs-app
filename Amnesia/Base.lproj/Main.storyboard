@@ -33,7 +33,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="J5w-Q4-i0r"/>
                     <connections>
-                        <outlet property="pieChart" destination="yUV-Ew-V8V" id="eac-zm-wqX"/>
+                        <outlet property="barChartView" destination="yUV-Ew-V8V" id="afT-CK-FrG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ply-8P-bQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
