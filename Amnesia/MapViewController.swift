@@ -13,7 +13,6 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     
-    
     @IBOutlet weak var map: MKMapView!
     
     var manager:CLLocationManager!
@@ -58,24 +57,57 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         var testLocation = CLLocation(latitude: 42.386809, longitude: -72.525473)
         //        42.386809, -72.525473
-        CLGeocoder().reverseGeocodeLocation(testLocation, completionHandler: {(placemarks, error) -> Void in
-            print(location)
+
+        reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
+        
+    }
+    
+    
+    // this function will ouput the location as a string
+    func reverseGeoCode(location: CLLocation) {
+
+        CLGeocoder().reverseGeocodeLocation(location)
+        {
+            (placemarks, error) -> Void in
             
-            if error != nil {
-                print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+            let placeArray = placemarks as [CLPlacemark]!
+            
+            // Place details
+            var placeMark: CLPlacemark!
+            placeMark = placeArray?[0]
+            if placeMark == nil {
                 return
             }
+            // Location name
+            if let locationName = placeMark.addressDictionary?["Name"] as? String
+            {
+                print(locationName)
+            }
+
+            // Street address
+            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
+            {
+                print(street)
+            }
             
-            if (placemarks?.count)! > 0 {
-                let pm = placemarks![0]
-                print(pm.locality)
+            // City
+            if let city = placeMark.addressDictionary?["City"] as? NSString
+            {
+                print(city)
             }
-            else {
-                print("Problem with the data received from geocoder")
+            
+            // Zip code
+            if let zip = placeMark.addressDictionary?["ZIP"] as? NSString
+            {
+                print(zip)
             }
-        })
-        
-        
+            
+            // Country
+            if let country = placeMark.addressDictionary?["Country"] as? NSString
+            {
+                print(country)
+            }
+        }
     }
     
 
@@ -90,3 +122,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     */
 
 }
+
+
+// old geocode data
+/*
+ //        CLGeocoder().reverseGeocodeLocation(testLocation, completionHandler: {(placemarks, error) -> Void in
+ //            print(location)
+ //
+ //            if error != nil {
+ //                print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+ //                return
+ //            }
+ //
+ //            if (placemarks?.count)! > 0 {
+ //                let pm = placemarks![0]
+ //                print(pm.locality)
+ //            }
+ //            else {
+ //                print("Problem with the data received from geocoder")
+ //            }
+ //        })
+ */
