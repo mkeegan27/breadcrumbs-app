@@ -16,7 +16,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     
     @IBOutlet weak var map: MKMapView!
-    
+    var pinAnnotationView:MKPinAnnotationView!
     var manager:CLLocationManager!
     
     override func viewDidLoad() {
@@ -32,6 +32,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         manager.startUpdatingLocation()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        map.delegate = self
+        map.mapType = MKMapType.standard
+        map.showsUserLocation = true
     }
     
     
@@ -49,9 +53,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         map.setRegion(region, animated: false)
         
+        
+        var newCoord:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 42.501247, longitude: -71.071485)
+        
+        var newAnotation = MKPointAnnotation()
+        newAnotation.coordinate = newCoord
+        newAnotation.title = "New Location"
+        newAnotation.subtitle = "New Subtitle"
+        map.addAnnotation(newAnotation)
+        
         reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
         
     }
+    
     
     
     // this function will ouput the location as a string
