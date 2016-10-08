@@ -13,10 +13,19 @@ import AddressBookUI
 class LogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tblV: UITableView!
+    var refreshControl: UIRefreshControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         LogMgr.addLoc(GPSNew: 0, locationNameNew: 0, timeBeginNew: 0, timeEndNew: 0)
+        
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "")
+        refreshControl.addTarget(self, action: Selector(("refresh")), for: UIControlEvents.valueChanged)
+        tblV.addSubview(refreshControl)
+        
         // Do any additional setup after loading the view.
         
         
@@ -78,6 +87,12 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
 //            }
 //        }
     }
+    
+    func refresh() {
+        // Code to refresh table view
+        tblV.reloadData()
+        self.refreshControl.endRefreshing()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -93,6 +108,30 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.changeLabelText(newText: "Test!!!")
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        let block = UITableViewRowAction(style: .normal, title: "Block") { action, index in
+//            print("Block")
+//            LogMgr.logset.remove(at: indexPath.row)
+//        }
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
+            print("Delete")
+            LogMgr.logset.remove(at: indexPath.row)
+            self.tblV.reloadData()
+        }
+        return [delete]
+//        LogMgr.logset.remove(at: indexPath.row)
+//        tblV.reloadData()
     }
     
 
