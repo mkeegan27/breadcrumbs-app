@@ -52,13 +52,31 @@
                     <view key="view" contentMode="scaleToFill" id="e2w-uY-y7I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-OZ-7PL">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How often do you want to check your location?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxd-zi-Sge">
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nxd-zi-Sge" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leading" constant="16" id="BkB-hR-3eg"/>
+                            <constraint firstItem="BUn-OZ-7PL" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="Kr5-ms-nie"/>
+                            <constraint firstItem="BUn-OZ-7PL" firstAttribute="top" secondItem="3Y3-Fx-TwW" secondAttribute="bottom" constant="8" id="aBm-Cb-foN"/>
+                            <constraint firstItem="Nxd-zi-Sge" firstAttribute="top" secondItem="BUn-OZ-7PL" secondAttribute="bottom" constant="8" id="evi-W8-0V9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="MaV-xW-qJI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4h6-fy-KiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-141" y="480"/>
+            <point key="canvasLocation" x="-141.59999999999999" y="479.91004497751129"/>
         </scene>
         <!--MapViewController-->
         <scene sceneID="U8U-Y8-tRy">
