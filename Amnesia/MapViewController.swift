@@ -29,7 +29,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
-        //        manager.requestAlwaysAuthorization()
+        manager.requestAlwaysAuthorization()
         
         manager.startUpdatingLocation()
         // Do any additional setup after loading the view, typically from a nib.
@@ -43,17 +43,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        //userLocation - there is no need for casting, because we are now using CLLocation object
-        
+//        var locValue:CLLocationCoordinate2D = manager.location.coordinate
+//        //userLocation - there is no need for casting, because we are now using CLLocation object
+//        
         let userLocation:CLLocation = locations[0]
         let latitude:CLLocationDegrees = userLocation.coordinate.latitude
         let longitude:CLLocationDegrees = userLocation.coordinate.longitude
-        let latDelta:CLLocationDegrees = 0.01
-        let lonDelta:CLLocationDegrees = 0.01
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
-        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+//        let latDelta:CLLocationDegrees = 0.01
+//        let lonDelta:CLLocationDegrees = 0.01
+//        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+//        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+//        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
 //        map.setRegion(region, animated: false)
+        
+        let location = locations.last! as CLLocation
+        
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        self.map.setRegion(region, animated: true)
         
         
         for value in allLocations.allLocations.values{
