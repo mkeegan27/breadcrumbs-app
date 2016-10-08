@@ -93,10 +93,15 @@ class StatsViewController: UIViewController {
     }
     
     func setColors(i:Int) {
-        for x in 1...i {
-            let value = 1.0 - Double(x)/Double(i)
-            colors.append(UIColor(white: CGFloat(value), alpha: 1.0))
+        if i == 0 {
+            colors.append(UIColor.black)
+        } else {
+            for x in 1...i {
+                let value = 1.0 - Double(x)/Double(i)
+                colors.append(UIColor(white: CGFloat(value), alpha: 1.0))
+            }
         }
+        
     }
 
 }
