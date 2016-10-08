@@ -46,7 +46,6 @@ class StatsViewController: UIViewController {
             let dataEntry = BarChartDataEntry(x: Double(i), yValues: [data[i]], label: dataTypes[i])
             dataEntries.append(dataEntry)
         }
-        print("THIS IS HTE BARCHART ENTRY\(dataEntries)")
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Number of votes")
         let chartData = BarChartData(dataSet: chartDataSet)
         chartData.setValueFont(UIFont(name: "Avenir", size: 13))
@@ -85,6 +84,7 @@ class StatsViewController: UIViewController {
     }
     
     func setChartData() {
+        
         for dataPoint in allLocations.allLocations.values {
             dataTypes.append(dataPoint.locationName)
             data.append(Double(dataPoint.seconds))
