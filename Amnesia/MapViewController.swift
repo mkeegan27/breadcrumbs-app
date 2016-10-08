@@ -11,6 +11,7 @@ import MapKit
 import CoreLocation
 
 var allLocations = Locations()
+var newLocations = LocationData()
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -94,13 +95,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             {
                 thisLocation = locationName
                 if thisLocation != "" {
-                    
+                    newLocations.addData(lat: location.coordinate.latitude, long: location.coordinate.longitude, timestamp: NSDate(), locName: thisLocation)
                     allLocations.addLocation(location: thisLocation, timestamp: NSDate(), coord: location)
 					LogMgr.addLoc(locNew:location, locationNameNew: thisLocation, timeBeginNew: 0, timeEndNew: 0)
-
                 }
                 
-                print(allLocations.allLocations)
+                print(newLocations.dataPoints)
             }
 //            // Street address
 //            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString

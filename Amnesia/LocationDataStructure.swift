@@ -43,7 +43,6 @@ struct Locations {
         return allLocations[self.toArray()[ind]]!
     }
     
-    
 }
 
 struct Alocation {

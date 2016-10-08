@@ -31,6 +31,7 @@ struct LocationData {
             if dataPoints.last!.locName == locName {
                 var last = dataPoints.removeLast()
                 last.timeSpent += 1
+                dataPoints.append(last)
                 return
             }
         }
