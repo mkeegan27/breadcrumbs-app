@@ -26,11 +26,15 @@ struct DataPoint {
 
 struct LocationData {
     var dataPoints = [DataPoint]()
+    var longestTime = 1
     mutating func addData(lat:CLLocationDegrees, long:CLLocationDegrees, timestamp:NSDate, locName:String) {
         if dataPoints.count > 0 {
             if dataPoints.last!.locName == locName {
                 var last = dataPoints.removeLast()
                 last.timeSpent += 1
+                if last.timeSpent > longestTime {
+                    longestTime = last.timeSpent
+                }
                 dataPoints.append(last)
                 return
             }
