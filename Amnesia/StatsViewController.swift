@@ -72,7 +72,7 @@ class StatsViewController: UIViewController {
         barChartView.leftAxis.gridColor = UIColor.lightGray
         
         
-        chartDataSet.colors = [UIColor(red: 135/255, green: 206/255, blue: 250/255, alpha: 1), UIColor(red: 1, green: 0.80, blue: 0.82, alpha: 1), UIColor.gray]
+        chartDataSet.colors = colors
         barChartView.backgroundColor = UIColor.clear
         barChartView.animate(yAxisDuration: 2.0)
         
@@ -88,10 +88,14 @@ class StatsViewController: UIViewController {
             dataTypes.append(dataPoint.locationName)
             data.append(Double(dataPoint.seconds))
         }
+        setColors(i: allLocations.allLocations.count)
     }
     
     func setColors(i:Int) {
-//        for x in
+        for x in 1...i {
+            let value = 1.0 - Double(x)/Double(i)
+            colors.append(UIColor(white: CGFloat(value), alpha: 1.0))
+        }
     }
 
 }
