@@ -18,7 +18,55 @@
 		86C41B9B1DA947190006FBAF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C41B9A1DA947190006FBAF /* MapViewController.swift */; };
 		86C41B9D1DA947430006FBAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41B9C1DA947430006FBAF /* CoreLocation.framework */; };
 		86C41B9F1DA957560006FBAF /* LocationDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C41B9E1DA957560006FBAF /* LocationDataStructure.swift */; };
+		86C41BB51DA960500006FBAF /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C41BB41DA960500006FBAF /* StatsViewController.swift */; };
+		86C41BC21DA960C90006FBAF /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41BBD1DA960AB0006FBAF /* Charts.framework */; };
+		86C41BC31DA960C90006FBAF /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41BBD1DA960AB0006FBAF /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86C41BBC1DA960AB0006FBAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86C41BB61DA960AB0006FBAF /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		86C41BBE1DA960AB0006FBAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86C41BB61DA960AB0006FBAF /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		86C41BC01DA960AB0006FBAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86C41BB61DA960AB0006FBAF /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		86C41BC41DA960C90006FBAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86C41BB61DA960AB0006FBAF /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		86C41BB31DA960330006FBAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				86C41BC31DA960C90006FBAF /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1F6F2FE81DA93CC200845659 /* Amnesia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amnesia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +82,8 @@
 		86C41B9A1DA947190006FBAF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		86C41B9C1DA947430006FBAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		86C41B9E1DA957560006FBAF /* LocationDataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataStructure.swift; sourceTree = "<group>"; };
+		86C41BB41DA960500006FBAF /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		86C41BB61DA960AB0006FBAF /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master 2/Charts.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C41BC21DA960C90006FBAF /* Charts.framework in Frameworks */,
 				86C41B9D1DA947430006FBAF /* CoreLocation.framework in Frameworks */,
 				86C41B991DA946030006FBAF /* MapKit.framework in Frameworks */,
 			);
@@ -52,6 +103,7 @@
 		1F6F2FDF1DA93CC200845659 = {
 			isa = PBXGroup;
 			children = (
+				86C41BB61DA960AB0006FBAF /* Charts.xcodeproj */,
 				1F6F2FEA1DA93CC200845659 /* Amnesia */,
 				1F6F2FE91DA93CC200845659 /* Products */,
 				86C41B971DA946030006FBAF /* Frameworks */,
@@ -71,6 +123,7 @@
 			children = (
 				1F6F2FEB1DA93CC200845659 /* AppDelegate.swift */,
 				1F6F2FEF1DA93CC200845659 /* Main.storyboard */,
+				86C41BB41DA960500006FBAF /* StatsViewController.swift */,
 				1F6F2FFF1DA9400E00845659 /* LogManager.swift */,
 				86C41B9A1DA947190006FBAF /* MapViewController.swift */,
 				86C41B9E1DA957560006FBAF /* LocationDataStructure.swift */,
@@ -92,6 +145,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		86C41BB71DA960AB0006FBAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86C41BBD1DA960AB0006FBAF /* Charts.framework */,
+				86C41BBF1DA960AB0006FBAF /* ChartsRealm.framework */,
+				86C41BC11DA960AB0006FBAF /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,10 +165,12 @@
 				1F6F2FE41DA93CC200845659 /* Sources */,
 				1F6F2FE51DA93CC200845659 /* Frameworks */,
 				1F6F2FE61DA93CC200845659 /* Resources */,
+				86C41BB31DA960330006FBAF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				86C41BC51DA960C90006FBAF /* PBXTargetDependency */,
 			);
 			name = Amnesia;
 			productName = Amnesia;
@@ -145,12 +210,42 @@
 			mainGroup = 1F6F2FDF1DA93CC200845659;
 			productRefGroup = 1F6F2FE91DA93CC200845659 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 86C41BB71DA960AB0006FBAF /* Products */;
+					ProjectRef = 86C41BB61DA960AB0006FBAF /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1F6F2FE71DA93CC200845659 /* Amnesia */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		86C41BBD1DA960AB0006FBAF /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 86C41BBC1DA960AB0006FBAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		86C41BBF1DA960AB0006FBAF /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = 86C41BBE1DA960AB0006FBAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		86C41BC11DA960AB0006FBAF /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 86C41BC01DA960AB0006FBAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1F6F2FE61DA93CC200845659 /* Resources */ = {
@@ -174,12 +269,21 @@
 				1F6F30001DA9400E00845659 /* LogManager.swift in Sources */,
 				1F6F2FEC1DA93CC200845659 /* AppDelegate.swift in Sources */,
 				1F6F30041DA9428700845659 /* LogTableViewCell.swift in Sources */,
+				86C41BB51DA960500006FBAF /* StatsViewController.swift in Sources */,
 				86C41B9B1DA947190006FBAF /* MapViewController.swift in Sources */,
 				1F6F30021DA9418000845659 /* LogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86C41BC51DA960C90006FBAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 86C41BC41DA960C90006FBAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1F6F2FEF1DA93CC200845659 /* Main.storyboard */ = {
@@ -297,6 +401,7 @@
 		1F6F2FFB1DA93CC200845659 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X3JL3ZSTWS;
 				INFOPLIST_FILE = Amnesia/Info.plist;
@@ -310,6 +415,7 @@
 		1F6F2FFC1DA93CC200845659 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X3JL3ZSTWS;
 				INFOPLIST_FILE = Amnesia/Info.plist;
