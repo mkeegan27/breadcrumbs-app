@@ -20,7 +20,9 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         //LogMgr.addLoc(GPSNew: 0, locationNameNew: 0, timeBeginNew: 0, timeEndNew: 0)
         
-        
+        self.tblV.tableFooterView = UIView()
+        self.tblV.separatorStyle = UITableViewCellSeparatorStyle.none
+
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "")
         refreshControl.addTarget(self, action: #selector(LogViewController.refresh), for: UIControlEvents.valueChanged)
