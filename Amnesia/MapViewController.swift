@@ -57,14 +57,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     @IBAction func locButtonPressed(_ sender: UIButton) {
-        if(setLocation){
-            map.setUserTrackingMode(MKUserTrackingMode.none, animated: true)
-            setLocation = false
-        }
-        else{
+//        if(setLocation){
+//            map.setUserTrackingMode(MKUserTrackingMode.none, animated: true)
+//            setLocation = false
+//        }
+//        else{
             map.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
             setLocation = true
-        }
+//        }
         
     }
     
