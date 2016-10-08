@@ -7,6 +7,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Stats-->
+        <scene sceneID="tSv-y0-gxk">
+            <objects>
+                <viewController id="Geb-gX-gWi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mnh-Os-TRh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qyq-zz-p3D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YgB-GI-xFo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stats" id="J5w-Q4-i0r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ply-8P-bQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1294" y="511"/>
+        </scene>
         <!--MapViewController-->
         <scene sceneID="U8U-Y8-tRy">
             <objects>
@@ -19,7 +38,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOW-pj-ql7"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOW-pj-ql7">
+                                <frame key="frameInset" width="1000" height="1000"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -57,7 +78,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Xy-E2-Thn" id="bFj-kh-fwf">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0p-hT-DNA">
@@ -111,6 +132,7 @@
                     <connections>
                         <segue destination="FCN-nF-COP" kind="relationship" relationship="viewControllers" id="4As-MB-0rr"/>
                         <segue destination="eXW-kg-79l" kind="relationship" relationship="viewControllers" id="tC2-c2-pdi"/>
+                        <segue destination="Geb-gX-gWi" kind="relationship" relationship="viewControllers" id="ag3-xW-9JQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ii0-lR-lsw" userLabel="First Responder" sceneMemberID="firstResponder"/>

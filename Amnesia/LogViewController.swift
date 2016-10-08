@@ -20,25 +20,25 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         // Do any additional setup after loading the view.
         
         
-        var longitude :CLLocationDegrees = -72.525909
-        var latitude :CLLocationDegrees = 42.391075
-        
-        var location = CLLocation(latitude: latitude, longitude: longitude) //changed!!!
-        //print(location)
-        
-        
-        CLGeocoder().reverseGeocodeLocation(location)
-        {
-            (placemarks, error) -> Void in
-            
-            let placeArray = placemarks as [CLPlacemark]!
-            
-            // Place details
-            var placeMark: CLPlacemark!
-            placeMark = placeArray?[0]
-            
-            print(ABCreateStringWithAddressDictionary(placeMark.addressDictionary!, false))
-            
+//        var longitude :CLLocationDegrees = -72.525909
+//        var latitude :CLLocationDegrees = 42.391075
+//        
+//        var location = CLLocation(latitude: latitude, longitude: longitude) //changed!!!
+//        //print(location)
+//        
+//        
+//        CLGeocoder().reverseGeocodeLocation(location)
+//        {
+//            (placemarks, error) -> Void in
+//            
+//            let placeArray = placemarks as [CLPlacemark]!
+//            
+//            // Place details
+//            var placeMark: CLPlacemark!
+//            placeMark = placeArray?[0]
+//            
+//            print(ABCreateStringWithAddressDictionary(placeMark.addressDictionary!, false))
+//            
             // Address dictionary
             //print(placeMark.addressDictionary)
             
@@ -76,7 +76,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
 //            {
 //                print(country)
 //            }
-        }
+//        }
     }
 
     override func didReceiveMemoryWarning() {
