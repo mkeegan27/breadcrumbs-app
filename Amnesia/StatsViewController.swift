@@ -10,7 +10,7 @@ import UIKit
 import Charts
 
 
-class StatsViewController: UIViewController {
+class StatsViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var barChartView: BarChartView!
 
     var dataTypes = [String]()
@@ -22,6 +22,7 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        barChartView.delegate = self
 //        setChartData()
 //        setChart(dataPoints: dataTypes, values: data)
         // Do any additional setup after loading the view.
@@ -54,20 +55,22 @@ class StatsViewController: UIViewController {
         chartData.setValueTextColor(UIColor.black)
         //        chartData.setValueFormatter(NSNumberFormatter())
         chartData.setDrawValues(false)
+        
         barChartView.leftAxis.axisMinValue = 0
         barChartView.data = chartData
         barChartView.descriptionText = ""
-        barChartView.xAxis.labelPosition = .bottom
-        barChartView.xAxis.labelFont = UIFont(name: "Avenir", size: 14)!
-        barChartView.xAxis.labelTextColor = UIColor.black
+//        barChartView.xAxis.labelPosition = .bottom
+//        barChartView.xAxis.labelFont = UIFont(name: "Avenir", size: 14)!
+//        barChartView.xAxis.labelTextColor = UIColor.black
+        barChartView.xAxis.enabled = false
         barChartView.rightAxis.enabled = false
         barChartView.legend.enabled = false
         barChartView.legend.textColor = UIColor.black
         barChartView.leftAxis.enabled = true
         barChartView.leftAxis.labelTextColor = UIColor.black
-        barChartView.highlightPerTapEnabled = false
+        barChartView.highlightPerTapEnabled = true
         barChartView.doubleTapToZoomEnabled = false
-        barChartView.data?.highlightEnabled = false
+        barChartView.data?.highlightEnabled = true
         //        barChartView.xAxis.drawGridLinesEnabled = false
         //        barChartView.leftAxis.drawGridLinesEnabled = false
         barChartView.xAxis.gridColor = UIColor.lightGray
@@ -107,6 +110,10 @@ class StatsViewController: UIViewController {
             }
         }
         
+    }
+    
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: Highlight) {
+        print("hello world")
     }
     
     struct barChartDataPoint {
