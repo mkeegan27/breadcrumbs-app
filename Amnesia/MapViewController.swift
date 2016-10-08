@@ -16,7 +16,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     
     @IBOutlet weak var map: MKMapView!
-    
+    var pointAnnotation:CustomPinAnnotation!
+    var pinAnnotationView:MKPinAnnotationView!
     var manager:CLLocationManager!
     
     override func viewDidLoad() {
@@ -32,6 +33,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         manager.startUpdatingLocation()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        map.delegate = self
+        map.mapType = MKMapType.standard
+        map.showsUserLocation = true
     }
     
     
@@ -51,6 +56,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
         
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseIdentifier = "pin"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        let customPointAnnotation = annotation as! CustomPointAnnotation
+        annotationView?.image = UIImage(named: customPointAnnotation.pinCustomImageName)
+        
+        return annotationView
     }
     
     
