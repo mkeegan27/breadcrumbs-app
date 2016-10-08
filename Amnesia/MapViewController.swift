@@ -141,7 +141,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 					LogMgr.addLoc(locNew:location, locationNameNew: thisLocation, timeBeginNew: 0, timeEndNew: 0)
                 }
                 
-                print(newLocations.dataPoints)
             }
 //            // Street address
 //            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
