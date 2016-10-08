@@ -126,6 +126,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
 //        }
         let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
             print("Delete")
+            allLocations.allLocations.removeValue(forKey: LogMgr.logset[indexPath.row].locationName)
             LogMgr.logset.remove(at: indexPath.row)
             self.tblV.reloadData()
         }
