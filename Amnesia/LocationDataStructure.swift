@@ -9,13 +9,21 @@
 import UIKit
 
 struct Locations {
-    var allLocations = [String:Int]()
+    var allLocations = [String:Alocation]()
     
-    mutating func addLocation(location:String) {
+    mutating func addLocation(location:String, timestamp:NSDate) {
         if allLocations[location] == nil {
-            allLocations[location] = 5
+            var newLocation = Alocation()
+            newLocation.seconds = 5
+            newLocation.lastVisit = timestamp
+            allLocations[location] = newLocation
         } else {
-            allLocations[location] = allLocations[location]! + 5
+            allLocations[location]!.seconds = allLocations[location]!.seconds + 5
         }
     }
+}
+
+struct Alocation {
+    var seconds = 0
+    var lastVisit:NSDate = NSDate()
 }

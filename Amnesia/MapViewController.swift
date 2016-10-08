@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-var locations = Locations()
+var allLocations = Locations()
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -37,8 +37,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        print(locations)
-        
         //userLocation - there is no need for casting, because we are now using CLLocation object
         
         let userLocation:CLLocation = locations[0]
@@ -51,15 +49,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         map.setRegion(region, animated: false)
         
-        
-        
-        var newLocation = CLLocation(latitude: latitude, longitude: longitude)
-        
-        //        var testLocation = CLLocation(latitude: 42.373222, longitude: -72.519854)
-        
-        var testLocation = CLLocation(latitude: 42.386809, longitude: -72.525473)
-        //        42.386809, -72.525473
-
         reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
         
     }
@@ -87,12 +76,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             {
                 thisLocation = locationName
                 if thisLocation != "" {
-                    locations.addLocation(location: thisLocation)
+                    print(NSDate())
+                    allLocations.addLocation(location: thisLocation, timestamp: NSDate())
                 }
                 
-                print(locations.allLocations)
+                print(allLocations.allLocations)
             }
-            print(locations)
 //            // Street address
 //            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
 //            {
