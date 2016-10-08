@@ -78,6 +78,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 if thisLocation != "" {
                     print(NSDate())
                     allLocations.addLocation(location: thisLocation, timestamp: NSDate())
+					LogMgr.addLoc(locNew:location, locationNameNew: thisLocation, timeBeginNew: 0, timeEndNew: 0)
+
                 }
                 
                 print(allLocations.allLocations)
@@ -105,6 +107,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //            {
 //                print(country)
 //            }
+            
+            
         }
     }
     
