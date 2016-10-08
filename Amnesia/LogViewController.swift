@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import AddressBookUI
 
 class LogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -23,7 +24,8 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         var latitude :CLLocationDegrees = 42.391075
         
         var location = CLLocation(latitude: latitude, longitude: longitude) //changed!!!
-        print(location)
+        //print(location)
+        
         
         CLGeocoder().reverseGeocodeLocation(location)
         {
@@ -35,8 +37,10 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             var placeMark: CLPlacemark!
             placeMark = placeArray?[0]
             
+            print(ABCreateStringWithAddressDictionary(placeMark.addressDictionary!, false))
+            
             // Address dictionary
-            print(placeMark.addressDictionary)
+            //print(placeMark.addressDictionary)
             
             // Location name
             if let locationName = placeMark.addressDictionary?["Name"] as? NSString
