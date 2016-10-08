@@ -22,7 +22,7 @@ struct DataPoint {
         self.long = long
         self.startTimestamp = timestamp
         self.locName = locName
-        timeSpent = 1
+        timeSpent = timeCheckInt
     }
 }
 
@@ -34,6 +34,7 @@ struct LocationData {
             if dataPoints.last!.locName == locName {
                 var last = dataPoints.removeLast()
                 last.timeSpent += timeCheckInt
+                //print("\n" + String(timeCheckInt) + "\n\n\n\n")
                 if last.timeSpent > longestTime {
                     longestTime = last.timeSpent
                 }
