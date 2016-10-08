@@ -21,6 +21,7 @@
 		86C41B9D1DA947430006FBAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41B9C1DA947430006FBAF /* CoreLocation.framework */; };
 		86C41B9F1DA957560006FBAF /* LocationDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C41B9E1DA957560006FBAF /* LocationDataStructure.swift */; };
 		86C41BB51DA960500006FBAF /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C41BB41DA960500006FBAF /* StatsViewController.swift */; };
+		86C41BCA1DA986FB0006FBAF /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C41BC91DA986FB0006FBAF /* DataPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		86C41B9C1DA947430006FBAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		86C41B9E1DA957560006FBAF /* LocationDataStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataStructure.swift; sourceTree = "<group>"; };
 		86C41BB41DA960500006FBAF /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		86C41BC91DA986FB0006FBAF /* DataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				86C41B9E1DA957560006FBAF /* LocationDataStructure.swift */,
 				1F6F30031DA9428700845659 /* LogTableViewCell.swift */,
 				1F6F30011DA9418000845659 /* LogViewController.swift */,
+				86C41BC91DA986FB0006FBAF /* DataPoint.swift */,
 				1F6F2FF21DA93CC200845659 /* Assets.xcassets */,
 				1F6F2FF41DA93CC200845659 /* LaunchScreen.storyboard */,
 				1F6F2FF71DA93CC200845659 /* Info.plist */,
@@ -271,6 +274,7 @@
 				1F6F30041DA9428700845659 /* LogTableViewCell.swift in Sources */,
 				86C41BB51DA960500006FBAF /* StatsViewController.swift in Sources */,
 				86C41B9B1DA947190006FBAF /* MapViewController.swift in Sources */,
+				86C41BCA1DA986FB0006FBAF /* DataPoint.swift in Sources */,
 				1F6F30021DA9418000845659 /* LogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
