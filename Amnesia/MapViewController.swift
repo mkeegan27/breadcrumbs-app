@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-var locations = [String]()
+var locations = Locations()
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -86,8 +86,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if let locationName = placeMark.addressDictionary?["Name"] as? String
             {
                 thisLocation = locationName
-                locations.append(thisLocation)
-//                print(locationName)
+                if thisLocation != "" {
+                    locations.addLocation(location: thisLocation)
+                }
+                
+                print(locations.allLocations)
             }
             print(locations)
 //            // Street address
