@@ -31,14 +31,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="yUV-Ew-V8V" secondAttribute="trailing" id="pAa-Ki-mrc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stats" id="J5w-Q4-i0r"/>
+                    <tabBarItem key="tabBarItem" title="Stats" image="chart" selectedImage="chart" id="J5w-Q4-i0r"/>
                     <connections>
                         <outlet property="barChartView" destination="yUV-Ew-V8V" id="afT-CK-FrG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ply-8P-bQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1335.2" y="573.46326836581716"/>
+            <point key="canvasLocation" x="-1559" y="537"/>
         </scene>
         <!--MapViewController-->
         <scene sceneID="U8U-Y8-tRy">
@@ -52,7 +52,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOW-pj-ql7">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOW-pj-ql7">
                                 <frame key="frameInset" width="1000" height="1000"/>
                             </mapView>
                         </subviews>
@@ -64,7 +64,7 @@
                             <constraint firstAttribute="bottom" secondItem="ZOW-pj-ql7" secondAttribute="bottom" id="ttf-MV-3jo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="g6l-e9-drk"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" selectedImage="map" id="g6l-e9-drk"/>
                     <connections>
                         <outlet property="map" destination="ZOW-pj-ql7" id="KSG-fr-WlU"/>
                     </connections>
@@ -133,7 +133,7 @@
                             <constraint firstItem="4EM-bc-Occ" firstAttribute="leading" secondItem="T57-zi-Kvl" secondAttribute="leading" id="u2M-zJ-Ypo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Log" id="Mff-0U-AcS"/>
+                    <tabBarItem key="tabBarItem" title="My Places" image="log" selectedImage="log" id="Mff-0U-AcS"/>
                     <connections>
                         <outlet property="tblV" destination="4EM-bc-Occ" id="kTb-4A-0Xz"/>
                     </connections>
@@ -154,7 +154,7 @@
                     <connections>
                         <segue destination="FCN-nF-COP" kind="relationship" relationship="viewControllers" id="4As-MB-0rr"/>
                         <segue destination="eXW-kg-79l" kind="relationship" relationship="viewControllers" id="tC2-c2-pdi"/>
-                        <segue destination="Geb-gX-gWi" kind="relationship" relationship="viewControllers" id="ag3-xW-9JQ"/>
+                        <segue destination="Geb-gX-gWi" kind="relationship" relationship="viewControllers" id="G1R-PR-Fsh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ii0-lR-lsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,4 +162,9 @@
             <point key="canvasLocation" x="-1558" y="-243"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chart" width="18" height="18"/>
+        <image name="log" width="18" height="18"/>
+        <image name="map" width="18" height="18"/>
+    </resources>
 </document>
