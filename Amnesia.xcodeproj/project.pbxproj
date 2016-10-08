@@ -14,7 +14,7 @@
 		1F6F30001DA9400E00845659 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F2FFF1DA9400E00845659 /* LogManager.swift */; };
 		1F6F30021DA9418000845659 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F30011DA9418000845659 /* LogViewController.swift */; };
 		1F6F30041DA9428700845659 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F30031DA9428700845659 /* LogTableViewCell.swift */; };
-		1FF2D0AC1DA99889000C643C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF2D0AB1DA99889000C643C /* SettingsViewController.swift */; };
+		1FF2D0B01DA9A958000C643C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF2D0AF1DA9A958000C643C /* SettingsViewController.swift */; };
 		4EEE738A1DA96568007FB40A /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EEE73851DA9655F007FB40A /* Charts.framework */; };
 		4EEE738B1DA96568007FB40A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EEE73851DA9655F007FB40A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		86C41B991DA946030006FBAF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C41B981DA946030006FBAF /* MapKit.framework */; };
@@ -80,7 +80,7 @@
 		1F6F2FFF1DA9400E00845659 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogManager.swift; path = ../LogManager.swift; sourceTree = "<group>"; };
 		1F6F30011DA9418000845659 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		1F6F30031DA9428700845659 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
-		1FF2D0AB1DA99889000C643C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1FF2D0AF1DA9A958000C643C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4EEE737E1DA9655F007FB40A /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		86C41B981DA946030006FBAF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		86C41B9A1DA947190006FBAF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				1F6F2FEB1DA93CC200845659 /* AppDelegate.swift */,
+				1FF2D0AF1DA9A958000C643C /* SettingsViewController.swift */,
 				1F6F2FEF1DA93CC200845659 /* Main.storyboard */,
-				1FF2D0AB1DA99889000C643C /* SettingsViewController.swift */,
 				86C41BB41DA960500006FBAF /* StatsViewController.swift */,
 				1F6F2FFF1DA9400E00845659 /* LogManager.swift */,
 				86C41B9A1DA947190006FBAF /* MapViewController.swift */,
@@ -279,7 +279,7 @@
 				86C41B9B1DA947190006FBAF /* MapViewController.swift in Sources */,
 				86C41BCA1DA986FB0006FBAF /* DataPoint.swift in Sources */,
 				1F6F30021DA9418000845659 /* LogViewController.swift in Sources */,
-				1FF2D0AC1DA99889000C643C /* SettingsViewController.swift in Sources */,
+				1FF2D0B01DA9A958000C643C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
