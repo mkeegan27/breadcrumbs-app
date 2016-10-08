@@ -21,6 +21,21 @@ struct Locations {
             allLocations[location]!.seconds = allLocations[location]!.seconds + 5
         }
     }
+    
+    func getKeys() {
+        for key in allLocations.keys {
+            print(key)
+        }
+    }
+    
+    func toArray() -> [String] {
+        var stringArr: [String] = []
+        for key in allLocations.keys {
+            stringArr.append(key)
+        }
+        return stringArr
+    }
+    
 }
 
 struct Alocation {
