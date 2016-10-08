@@ -14,13 +14,15 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var barChartView: BarChartView!
 
     var dataTypes = [String]()
+    var data = [Double]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDataTypes()
+        setChartData()
 
-        let unitsSold = [Double(4.0), Double(4.0), Double(10.0)]
-        setChart(dataPoints: dataTypes, values: unitsSold)
+        
+        setChart(dataPoints: dataTypes, values: data)
         // Do any additional setup after loading the view.
     }
 
@@ -30,15 +32,11 @@ class StatsViewController: UIViewController {
         barChartView.noDataText = "Hi dude, there's no data"
         
         var dataEntries: [BarChartDataEntry] = []
-//        print(dataPoints.count)
-//        for i in 0..<dataPoints.count {
-//            let dataEntry = BarChartDataEntry(x: 10.0, yValues: [4.0], label: "hello")
-//            dataEntries.append(dataEntry)
-//        }
-        let dataEntry = BarChartDataEntry(x: 10.0, yValues: [4.0], label: "hello")
-        dataEntries.append(dataEntry)
-        let dataEntry2 = BarChartDataEntry(x: 5.0, yValues: [2.0], label: "yo")
-        dataEntries.append(dataEntry2)
+        print(dataPoints.count)
+        for i in 0..<dataPoints.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), yValues: [data[i]], label: dataTypes[i])
+            dataEntries.append(dataEntry)
+        }
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Number of votes")
         let chartData = BarChartData(dataSet: chartDataSet)
@@ -77,11 +75,11 @@ class StatsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setDataTypes() {
-        dataTypes = ["Male", "Female", "Other"]
-    }
     func setChartData() {
-        
+        for dataPoint in allLocations.allLocations.values {
+            dataTypes.append(dataPoint.locationName)
+            data.append(Double(dataPoint.seconds))
+        }
     }
 
 }
