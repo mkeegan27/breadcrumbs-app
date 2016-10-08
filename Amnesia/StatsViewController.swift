@@ -17,6 +17,8 @@ class StatsViewController: UIViewController {
     var data = [Double]()
     var colors = [UIColor]()
     
+    var newData = [barChartDataPoint]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,20 +32,20 @@ class StatsViewController: UIViewController {
         data = [Double]()
         colors = [UIColor]()
         setChartData()
-        setChart(dataPoints: dataTypes, values: data)
+        setChart(dataPoints: newData)
+        
     }
     
     
-    func setChart(dataPoints: [String], values: [Double]){
+    func setChart(dataPoints: [barChartDataPoint]){
         
         
         barChartView.noDataText = "Hi dude, there's no data"
         
         var dataEntries: [BarChartDataEntry] = []
-        print(dataPoints.count)
         for i in 0..<dataPoints.count {
             let newDataEntry = BarChartDataEntry()
-            let dataEntry = BarChartDataEntry(x: Double(i), yValues: [data[i]], label: dataTypes[i])
+            let dataEntry = BarChartDataEntry(x: Double(i), yValues: [newData[i].data], label: newData[i].dataType)
             dataEntries.append(dataEntry)
         }
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Number of votes")
@@ -85,11 +87,15 @@ class StatsViewController: UIViewController {
     
     func setChartData() {
         
-        for dataPoint in allLocations.allLocations.values {
-            dataTypes.append(dataPoint.locationName)
-            data.append(Double(dataPoint.seconds))
+        for dataPoint in newLocations.dataPoints {
+            dataTypes.append(dataPoint.locName)
+            data.append(Double(dataPoint.timeSpent))
+            newData.append(barChartDataPoint(dataType: dataPoint.locName,data: Double(dataPoint.timeSpent)))
         }
-        setColors(i: allLocations.allLocations.count)
+        newData.sort { (data1, data2) -> Bool in
+            return data1.data < data2.data
+        }
+        setColors(i: newData.count)
     }
     
     func setColors(i:Int) {
@@ -101,6 +107,15 @@ class StatsViewController: UIViewController {
             }
         }
         
+    }
+    
+    struct barChartDataPoint {
+        var dataType = ""
+        var data:Double = 0.0
+        init(dataType:String, data:Double) {
+            self.data = data
+            self.dataType = dataType
+        }
     }
 
 }
