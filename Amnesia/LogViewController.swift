@@ -23,7 +23,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "")
-        refreshControl.addTarget(self, action: Selector(("refresh")), for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action: #selector(LogViewController.refresh), for: UIControlEvents.valueChanged)
         tblV.addSubview(refreshControl)
         
         // Do any additional setup after loading the view.
