@@ -32,6 +32,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         dataTypes = [String]()
         data = [Double]()
         colors = [UIColor]()
+        newData = [barChartDataPoint]()
         setChartData()
         setChart(dataPoints: newData)
         
@@ -112,8 +113,15 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         
     }
     
-    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: Highlight) {
-        print("hello world")
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        
+        print(newData[Int(entry.x)])
+
+    }
+    
+    
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        print("nothing")
     }
     
     struct barChartDataPoint {
