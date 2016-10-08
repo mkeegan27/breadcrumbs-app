@@ -87,10 +87,14 @@
                             <constraint firstItem="n0g-i3-Ou4" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="u3I-9C-Gtu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="MaV-xW-qJI"/>
+<<<<<<< HEAD
+                    <tabBarItem key="tabBarItem" title="Settings" id="MaV-xW-qJI"/>
                     <connections>
-                        <outlet property="segCtrl" destination="n0g-i3-Ou4" id="xji-1I-cFs"/>
+                        <outlet property="segCtrl" destination="n0g-i3-Ou4" id="olk-9z-Esf"/>
                     </connections>
+=======
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="MaV-xW-qJI"/>
+>>>>>>> 65af6a2f10fc2599a3b7082b9ef77ea7fad7c73f
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4h6-fy-KiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

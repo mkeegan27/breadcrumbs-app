@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
         
         let attr = NSDictionary(object: UIFont(name: "Arial", size: 12.0)!, forKey: NSFontAttributeName as NSCopying)
         segCtrl.setTitleTextAttributes(attr as? [AnyHashable : Any], for: .normal)
-
+        segCtrl.setTitleTextAttributes(<#T##attributes: [AnyHashable : Any]?##[AnyHashable : Any]?#>, for: <#T##UIControlState#>)
         // Do any additional setup after loading the view.
     }
 
