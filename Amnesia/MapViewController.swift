@@ -16,7 +16,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     
     @IBOutlet weak var map: MKMapView!
-    var pointAnnotation:CustomPinAnnotation!
     var pinAnnotationView:MKPinAnnotationView!
     var manager:CLLocationManager!
     
@@ -54,26 +53,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         map.setRegion(region, animated: false)
         
+        
+        var newCoord:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 42.501247, longitude: -71.071485)
+        
+        var newAnotation = MKPointAnnotation()
+        newAnotation.coordinate = newCoord
+        newAnotation.title = "New Location"
+        newAnotation.subtitle = "New Subtitle"
+        map.addAnnotation(newAnotation)
+        
         reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
         
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let reuseIdentifier = "pin"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-        
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-            annotationView?.canShowCallout = true
-        } else {
-            annotationView?.annotation = annotation
-        }
-        
-        let customPointAnnotation = annotation as! CustomPointAnnotation
-        annotationView?.image = UIImage(named: customPointAnnotation.pinCustomImageName)
-        
-        return annotationView
-    }
     
     
     // this function will ouput the location as a string
