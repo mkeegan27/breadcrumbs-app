@@ -23,6 +23,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var manager:CLLocationManager!
     var setLocation: Bool = false
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let allAnnotations = self.map.annotations
+        self.map.removeAnnotations(allAnnotations)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +92,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //            self.map.setRegion(region, animated: true)
 //        //    setLocation = true
 //        }
-        
         
         for value in newLocations.dataPoints{
             
