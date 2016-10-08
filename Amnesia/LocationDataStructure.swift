@@ -16,6 +16,7 @@ struct Locations {
             var newLocation = Alocation()
             newLocation.seconds = 5
             newLocation.lastVisit = timestamp
+            newLocation.locationName = location
             allLocations[location] = newLocation
         } else {
             allLocations[location]!.seconds = allLocations[location]!.seconds + 5
@@ -45,4 +46,5 @@ struct Locations {
 struct Alocation {
     var seconds = 0
     var lastVisit:NSDate = NSDate()
+    var locationName = ""
 }

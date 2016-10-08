@@ -14,24 +14,36 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var barChartView: BarChartView!
 
     var dataTypes = [String]()
+    var data = [Double]()
+    var colors = [UIColor]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDataTypes()
-
-        let unitsSold = [Double(4.0), Double(4.0), Double(10.0)]
-        setChart(dataPoints: dataTypes, values: unitsSold)
+        setChartData()
+        setChart(dataPoints: dataTypes, values: data)
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        var dataTypes = [String]()
+        var data = [Double]()
+        var colors = [UIColor]()
+        setChartData()
+        setChart(dataPoints: dataTypes, values: data)
+    }
+    
+    
     func setChart(dataPoints: [String], values: [Double]){
         
         
         barChartView.noDataText = "Hi dude, there's no data"
         
         var dataEntries: [BarChartDataEntry] = []
+        print(dataPoints.count)
         for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(x: 3.0, yValues: [4.0,5], label: "hello")
+            let dataEntry = BarChartDataEntry(x: Double(i), yValues: [data[i]], label: dataTypes[i])
             dataEntries.append(dataEntry)
         }
         
@@ -72,17 +84,11 @@ class StatsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setDataTypes() {
-        dataTypes = ["Male", "Female", "Other"]
+    func setChartData() {
+        for dataPoint in allLocations.allLocations.values {
+            dataTypes.append(dataPoint.locationName)
+            data.append(Double(dataPoint.seconds))
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
