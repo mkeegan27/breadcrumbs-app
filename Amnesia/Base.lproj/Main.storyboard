@@ -53,23 +53,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-OZ-7PL">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How often do you want to check your location?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxd-zi-Sge">
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="n0g-i3-Ou4">
+                                <segments>
+                                    <segment title="1 sec"/>
+                                    <segment title="5 sec"/>
+                                    <segment title="1 min"/>
+                                    <segment title="2 min"/>
+                                    <segment title="5 min"/>
+                                    <segment title="30 min"/>
+                                    <segment title="1 hr"/>
+                                    <segment title="2 hr"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-OZ-7PL">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Nxd-zi-Sge" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leading" constant="16" id="BkB-hR-3eg"/>
-                            <constraint firstItem="BUn-OZ-7PL" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="Kr5-ms-nie"/>
-                            <constraint firstItem="BUn-OZ-7PL" firstAttribute="top" secondItem="3Y3-Fx-TwW" secondAttribute="bottom" constant="8" id="aBm-Cb-foN"/>
+                            <constraint firstItem="BUn-OZ-7PL" firstAttribute="top" secondItem="3Y3-Fx-TwW" secondAttribute="bottom" constant="8" id="LFJ-tf-IsU"/>
+                            <constraint firstItem="n0g-i3-Ou4" firstAttribute="trailing" secondItem="e2w-uY-y7I" secondAttribute="trailingMargin" id="Olm-l6-4gc"/>
+                            <constraint firstItem="BUn-OZ-7PL" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="QEM-gj-rFN"/>
+                            <constraint firstItem="Nxd-zi-Sge" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="Qdd-ny-ucC"/>
                             <constraint firstItem="Nxd-zi-Sge" firstAttribute="top" secondItem="BUn-OZ-7PL" secondAttribute="bottom" constant="8" id="evi-W8-0V9"/>
+                            <constraint firstItem="n0g-i3-Ou4" firstAttribute="top" secondItem="Nxd-zi-Sge" secondAttribute="bottom" constant="8" id="n3D-MS-d0X"/>
+                            <constraint firstItem="n0g-i3-Ou4" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="u3I-9C-Gtu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="MaV-xW-qJI"/>

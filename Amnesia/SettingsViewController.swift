@@ -9,9 +9,13 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        var attr = NSDictionary(object: UIFont(name: "yourFontName", size: 12.0)!, forKey: NSFontAttributeName as NSCopying)
+        UISegmentedControl.appearance().setTitleTextAttributes(attr, forState: .Normal)
 
         // Do any additional setup after loading the view.
     }
