@@ -36,6 +36,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.delegate = self
         map.mapType = MKMapType.standard
         map.showsUserLocation = true
+
     }
     
     
@@ -51,16 +52,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
         let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
         let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        map.setRegion(region, animated: false)
+//        map.setRegion(region, animated: false)
         
         
-        var newCoord:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 42.501247, longitude: -71.071485)
-        
-        var newAnotation = MKPointAnnotation()
-        newAnotation.coordinate = newCoord
-        newAnotation.title = "New Location"
-        newAnotation.subtitle = "New Subtitle"
-        map.addAnnotation(newAnotation)
+        for value in allLocations.allLocations.values{
+            
+            var newCoord:CLLocation = value.loc
+            
+            var newAnotation = MKPointAnnotation()
+            newAnotation.coordinate = newCoord.coordinate
+            newAnotation.title = value.locationName
+            newAnotation.subtitle = String(value.seconds)
+            map.addAnnotation(newAnotation)
+        }
         
         reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
         
@@ -91,7 +95,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 thisLocation = locationName
                 if thisLocation != "" {
                     print(NSDate())
-                    allLocations.addLocation(location: thisLocation, timestamp: NSDate())
+                    allLocations.addLocation(location: thisLocation, timestamp: NSDate(), coord: location)
 					LogMgr.addLoc(locNew:location, locationNameNew: thisLocation, timeBeginNew: 0, timeEndNew: 0)
 
                 }
