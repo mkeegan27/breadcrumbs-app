@@ -16,9 +16,13 @@ var newLocations = LocationData()
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     
+    @IBOutlet weak var locButton: UIButton!
+    
     @IBOutlet weak var map: MKMapView!
     var pinAnnotationView:MKPinAnnotationView!
     var manager:CLLocationManager!
+    var setLocation: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +41,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.delegate = self
         map.mapType = MKMapType.standard
         map.showsUserLocation = true
-
+        
+        map.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
+        setLocation = true
+        
+        
+    }
+    
+    
+    @IBAction func locButtonPressed(_ sender: UIButton) {
+        if(setLocation){
+            map.setUserTrackingMode(MKUserTrackingMode.none, animated: true)
+            setLocation = false
+        }
+        else{
+            map.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
+            setLocation = true
+        }
+        
     }
     
     
@@ -61,7 +82,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
-        self.map.setRegion(region, animated: true)
+//        if(setLocation){
+//            self.map.setRegion(region, animated: true)
+//        //    setLocation = true
+//        }
         
         
         for value in allLocations.allLocations.values{
@@ -76,6 +100,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         
         reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
+        
         
     }
     

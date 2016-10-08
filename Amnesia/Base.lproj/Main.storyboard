@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,17 +56,31 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOW-pj-ql7">
                                 <frame key="frameInset" width="375" height="618"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thp-Vq-IES">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4Kf-YN-bj6"/>
+                                    <constraint firstAttribute="width" secondItem="thp-Vq-IES" secondAttribute="height" multiplier="1:1" id="O0g-wQ-492"/>
+                                    <constraint firstAttribute="width" constant="40" id="so9-9P-q7d"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="locButtonPressed:" destination="eXW-kg-79l" eventType="touchUpInside" id="kO9-lb-q4s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ZOW-pj-ql7" secondAttribute="trailing" id="7Qr-sL-kIT"/>
                             <constraint firstItem="ZOW-pj-ql7" firstAttribute="leading" secondItem="sJK-tD-GNG" secondAttribute="leading" id="EWJ-jo-5MU"/>
+                            <constraint firstItem="zgc-ge-5zr" firstAttribute="top" secondItem="thp-Vq-IES" secondAttribute="bottom" constant="8" id="U8G-zf-npB"/>
                             <constraint firstItem="ZOW-pj-ql7" firstAttribute="top" secondItem="sJK-tD-GNG" secondAttribute="top" id="sq4-12-sEn"/>
                             <constraint firstAttribute="bottom" secondItem="ZOW-pj-ql7" secondAttribute="bottom" id="ttf-MV-3jo"/>
+                            <constraint firstItem="thp-Vq-IES" firstAttribute="leading" secondItem="sJK-tD-GNG" secondAttribute="leadingMargin" id="yvW-3l-kSl"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" selectedImage="map" id="g6l-e9-drk"/>
                     <connections>
+                        <outlet property="locButton" destination="thp-Vq-IES" id="NC0-3j-5UR"/>
                         <outlet property="map" destination="ZOW-pj-ql7" id="KSG-fr-WlU"/>
                     </connections>
                 </viewController>
