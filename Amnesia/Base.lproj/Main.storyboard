@@ -41,6 +41,25 @@
             </objects>
             <point key="canvasLocation" x="-854" y="637"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="N1E-sr-ygm">
+            <objects>
+                <viewController id="GFw-tQ-bok" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Y3-Fx-TwW"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Lx-Hf-PV3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e2w-uY-y7I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="MaV-xW-qJI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4h6-fy-KiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-141" y="480"/>
+        </scene>
         <!--MapViewController-->
         <scene sceneID="U8U-Y8-tRy">
             <objects>
@@ -107,7 +126,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Xy-E2-Thn" id="bFj-kh-fwf">
-                                            <frame key="frameInset" width="375" height="65.5"/>
+                                            <frame key="frameInset" width="375" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time spent there" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ug1-OU-8G8">
@@ -170,6 +189,7 @@
                         <segue destination="eXW-kg-79l" kind="relationship" relationship="viewControllers" id="tC2-c2-pdi"/>
                         <segue destination="FCN-nF-COP" kind="relationship" relationship="viewControllers" id="4As-MB-0rr"/>
                         <segue destination="Geb-gX-gWi" kind="relationship" relationship="viewControllers" id="G1R-PR-Fsh"/>
+                        <segue destination="GFw-tQ-bok" kind="relationship" relationship="viewControllers" id="Xq4-Ue-fkx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ii0-lR-lsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
