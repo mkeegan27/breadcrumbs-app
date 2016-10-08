@@ -44,7 +44,7 @@
         <!--Settings-->
         <scene sceneID="N1E-sr-ygm">
             <objects>
-                <viewController id="GFw-tQ-bok" sceneMemberID="viewController">
+                <viewController id="GFw-tQ-bok" customClass="SettingsViewController" customModule="Amnesia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Y3-Fx-TwW"/>
                         <viewControllerLayoutGuide type="bottom" id="4Lx-Hf-PV3"/>
@@ -88,6 +88,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="MaV-xW-qJI"/>
+                    <connections>
+                        <outlet property="segCtrl" destination="n0g-i3-Ou4" id="olk-9z-Esf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4h6-fy-KiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

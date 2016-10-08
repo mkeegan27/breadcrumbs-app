@@ -10,12 +10,13 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var segCtrl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        var attr = NSDictionary(object: UIFont(name: "yourFontName", size: 12.0)!, forKey: NSFontAttributeName as NSCopying)
-        UISegmentedControl.appearance().setTitleTextAttributes(attr, forState: .Normal)
+        let attr = NSDictionary(object: UIFont(name: "Arial", size: 12.0)!, forKey: NSFontAttributeName as NSCopying)
+        segCtrl.setTitleTextAttributes(attr as? [AnyHashable : Any], for: .normal)
 
         // Do any additional setup after loading the view.
     }
