@@ -100,12 +100,12 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return LogMgr.logset.count
+        return allLocations.toArray().count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.tblV.dequeueReusableCell(withIdentifier: "LogCell") as! LogTableViewCell
         
-        cell.changeLabelText(newText: "Test!!!")
+        cell.changeLabelText(newText: allLocations.toArray()[indexPath.row])
         
         return cell
     }
