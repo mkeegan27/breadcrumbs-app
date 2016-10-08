@@ -30,10 +30,15 @@ class StatsViewController: UIViewController {
         barChartView.noDataText = "Hi dude, there's no data"
         
         var dataEntries: [BarChartDataEntry] = []
-        for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(x: 3.0, yValues: [4.0,5], label: "hello")
-            dataEntries.append(dataEntry)
-        }
+//        print(dataPoints.count)
+//        for i in 0..<dataPoints.count {
+//            let dataEntry = BarChartDataEntry(x: 10.0, yValues: [4.0], label: "hello")
+//            dataEntries.append(dataEntry)
+//        }
+        let dataEntry = BarChartDataEntry(x: 10.0, yValues: [4.0], label: "hello")
+        dataEntries.append(dataEntry)
+        let dataEntry2 = BarChartDataEntry(x: 5.0, yValues: [2.0], label: "yo")
+        dataEntries.append(dataEntry2)
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Number of votes")
         let chartData = BarChartData(dataSet: chartDataSet)
@@ -75,14 +80,8 @@ class StatsViewController: UIViewController {
     func setDataTypes() {
         dataTypes = ["Male", "Female", "Other"]
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setChartData() {
+        
     }
-    */
 
 }
