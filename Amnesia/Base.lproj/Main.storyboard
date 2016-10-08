@@ -89,7 +89,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="MaV-xW-qJI"/>
                     <connections>
-                        <outlet property="segCtrl" destination="n0g-i3-Ou4" id="xji-1I-cFs"/>
+                        <outlet property="segCtrl" destination="n0g-i3-Ou4" id="Tgg-Jd-iH5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4h6-fy-KiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
