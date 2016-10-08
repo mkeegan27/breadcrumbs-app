@@ -10,7 +10,7 @@
         <!--Stats-->
         <scene sceneID="tSv-y0-gxk">
             <objects>
-                <viewController id="Geb-gX-gWi" sceneMemberID="viewController">
+                <viewController id="Geb-gX-gWi" customClass="StatsViewController" customModule="Amnesia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mnh-Os-TRh"/>
                         <viewControllerLayoutGuide type="bottom" id="Qyq-zz-p3D"/>
@@ -18,13 +18,27 @@
                     <view key="view" contentMode="scaleToFill" id="YgB-GI-xFo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUV-Ew-V8V" customClass="PieChartView" customModule="Charts">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yUV-Ew-V8V" firstAttribute="leading" secondItem="YgB-GI-xFo" secondAttribute="leading" id="Eou-Xg-DSs"/>
+                            <constraint firstAttribute="trailing" secondItem="yUV-Ew-V8V" secondAttribute="trailing" id="MLA-zr-lm6"/>
+                            <constraint firstAttribute="bottom" secondItem="yUV-Ew-V8V" secondAttribute="bottom" id="gOA-Ud-ZQA"/>
+                            <constraint firstItem="yUV-Ew-V8V" firstAttribute="top" secondItem="YgB-GI-xFo" secondAttribute="top" id="wF3-gH-eQR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="J5w-Q4-i0r"/>
+                    <connections>
+                        <outlet property="pieChart" destination="yUV-Ew-V8V" id="0mE-kD-pkb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ply-8P-bQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1294" y="511"/>
+            <point key="canvasLocation" x="-1335" y="574"/>
         </scene>
         <!--MapViewController-->
         <scene sceneID="U8U-Y8-tRy">
