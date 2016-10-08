@@ -26,9 +26,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qyq-zz-p3D" firstAttribute="top" secondItem="yUV-Ew-V8V" secondAttribute="bottom" id="9Ge-Tm-f3P"/>
-                            <constraint firstItem="yUV-Ew-V8V" firstAttribute="leading" secondItem="YgB-GI-xFo" secondAttribute="leading" id="Eou-Xg-DSs"/>
-                            <constraint firstAttribute="trailing" secondItem="yUV-Ew-V8V" secondAttribute="trailing" id="MLA-zr-lm6"/>
-                            <constraint firstItem="yUV-Ew-V8V" firstAttribute="top" secondItem="YgB-GI-xFo" secondAttribute="top" id="wF3-gH-eQR"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yUV-Ew-V8V" secondAttribute="leading" id="lNa-8l-Run"/>
+                            <constraint firstItem="yUV-Ew-V8V" firstAttribute="top" secondItem="mnh-Os-TRh" secondAttribute="bottom" id="oPZ-x6-jJh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yUV-Ew-V8V" secondAttribute="trailing" id="pAa-Ki-mrc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="J5w-Q4-i0r"/>
