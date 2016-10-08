@@ -2,9 +2,9 @@
 -settings to actually do something
 -add more settings
 -maybe improve charts
--delete/edit elements
 -make cells look nicer
 -change label to time interval
 
 extras:
 -search
+-set something as "home", "work"
