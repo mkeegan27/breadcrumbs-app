@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class LogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -16,6 +17,57 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         LogMgr.addLoc(GPSNew: 0, locationNameNew: 0, timeBeginNew: 0, timeEndNew: 0)
         // Do any additional setup after loading the view.
+        
+        
+        var longitude :CLLocationDegrees = -72.525909
+        var latitude :CLLocationDegrees = 42.391075
+        
+        var location = CLLocation(latitude: latitude, longitude: longitude) //changed!!!
+        print(location)
+        
+        CLGeocoder().reverseGeocodeLocation(location)
+        {
+            (placemarks, error) -> Void in
+            
+            let placeArray = placemarks as [CLPlacemark]!
+            
+            // Place details
+            var placeMark: CLPlacemark!
+            placeMark = placeArray?[0]
+            
+            // Address dictionary
+            print(placeMark.addressDictionary)
+            
+            // Location name
+            if let locationName = placeMark.addressDictionary?["Name"] as? NSString
+            {
+                print(locationName)
+            }
+            
+            // Street address
+            if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
+            {
+                print(street)
+            }
+            
+            // City
+            if let city = placeMark.addressDictionary?["City"] as? NSString
+            {
+                print(city)
+            }
+            
+            // Zip code
+            if let zip = placeMark.addressDictionary?["ZIP"] as? NSString
+            {
+                print(zip)
+            }
+            
+            // Country
+            if let country = placeMark.addressDictionary?["Country"] as? NSString
+            {
+                print(country)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
