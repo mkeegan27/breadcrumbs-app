@@ -97,8 +97,7 @@ class StatsViewController: UIViewController {
             colors.append(UIColor.black)
         } else {
             for x in 1...i {
-                let value = 1.0 - Double(x)/Double(i)
-                colors.append(UIColor(white: CGFloat(value), alpha: 1.0))
+                colors.append(UIColor(colorLiteralRed: 14/255, green: 122/255, blue: 254/255, alpha: Float(x)/Float(i)))
             }
         }
         
