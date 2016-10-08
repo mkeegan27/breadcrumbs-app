@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import MapKit
 
 struct Locations {
     var allLocations = [String:Alocation]()
     
-    mutating func addLocation(location:String, timestamp:NSDate) {
+    mutating func addLocation(location:String, timestamp:NSDate, coord:CLLocation) {
         if allLocations[location] == nil {
             var newLocation = Alocation()
             newLocation.seconds = 5
             newLocation.lastVisit = timestamp
             newLocation.locationName = location
+            newLocation.loc = coord
             allLocations[location] = newLocation
         } else {
             allLocations[location]!.seconds = allLocations[location]!.seconds + 5
@@ -41,10 +43,12 @@ struct Locations {
         return allLocations[self.toArray()[ind]]!
     }
     
+    
 }
 
 struct Alocation {
     var seconds = 0
     var lastVisit:NSDate = NSDate()
     var locationName = ""
+    var loc: CLLocation = CLLocation(latitude: 0,longitude: 0)
 }
