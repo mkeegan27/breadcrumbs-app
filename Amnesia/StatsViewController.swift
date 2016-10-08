@@ -11,7 +11,7 @@ import Charts
 
 
 class StatsViewController: UIViewController {
-    @IBOutlet weak var pieChart: PieChartView!
+    @IBOutlet weak var pieChart: BarChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
