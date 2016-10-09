@@ -19,6 +19,10 @@ class SpecificMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(specificRegion)
+        let newCoord:CLLocation = CLLocation(latitude: specificRegion.center.latitude, specificRegion.center.longitude)
+        let newAnotation = MKPointAnnotation()
+        newAnotation.coordinate = newCoord.coordinate
+        newAnotation.title = value.locName
         map.setRegion(specificRegion, animated: false)
         //        if(setLocation){
         //            self.map.setRegion(region, animated: true)
