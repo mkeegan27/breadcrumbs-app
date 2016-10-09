@@ -86,18 +86,15 @@
                                     <segment title="1 hr"/>
                                     <segment title="2 hr"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segChanged:" destination="GFw-tQ-bok" eventType="valueChanged" id="5Fb-Af-Iph"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-OZ-7PL">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJv-rk-zD6">
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="GFw-tQ-bok" eventType="touchUpInside" id="1ER-SO-nH2"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abe-EF-Yjf">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -126,14 +123,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tU-RU-X9M">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="4tU-RU-X9M" firstAttribute="top" secondItem="uMP-iY-etn" secondAttribute="bottom" constant="4" id="8Mr-FH-H59"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="uMP-iY-etn" secondAttribute="trailing" id="RIl-Ud-CuY"/>
                                                 <constraint firstItem="uMP-iY-etn" firstAttribute="leading" secondItem="Vwt-NS-NYR" secondAttribute="leadingMargin" id="Stb-mz-cys"/>
                                                 <constraint firstItem="uMP-iY-etn" firstAttribute="top" secondItem="Vwt-NS-NYR" secondAttribute="topMargin" id="dPg-JI-Y1n"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4tU-RU-X9M" secondAttribute="trailing" id="eQU-3Z-gef"/>
+                                                <constraint firstItem="4tU-RU-X9M" firstAttribute="leading" secondItem="Vwt-NS-NYR" secondAttribute="leadingMargin" constant="8" id="wgm-Nt-Nrr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="oldNameLabel" destination="4tU-RU-X9M" id="BG3-Gb-fD5"/>
                                             <outlet property="saveNameLabel" destination="uMP-iY-etn" id="UJD-ci-lTS"/>
                                         </connections>
                                     </tableViewCell>
@@ -146,20 +152,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="abe-EF-Yjf" firstAttribute="top" secondItem="mJv-rk-zD6" secondAttribute="bottom" constant="10.5" id="1br-W5-KZS"/>
-                            <constraint firstItem="mJv-rk-zD6" firstAttribute="top" secondItem="n0g-i3-Ou4" secondAttribute="bottom" constant="8" id="3di-e5-dBL"/>
                             <constraint firstItem="csZ-hp-kYp" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="7hB-zk-dMM"/>
                             <constraint firstItem="csZ-hp-kYp" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="A36-2d-wCg"/>
                             <constraint firstItem="abe-EF-Yjf" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="Dcb-5B-eRj"/>
                             <constraint firstItem="g2V-yI-Quo" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="ICs-XS-ss6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g2V-yI-Quo" secondAttribute="trailing" id="KKL-xj-UeC"/>
+                            <constraint firstItem="abe-EF-Yjf" firstAttribute="top" secondItem="n0g-i3-Ou4" secondAttribute="bottom" constant="48.5" id="Ki2-H4-c9u"/>
                             <constraint firstItem="BUn-OZ-7PL" firstAttribute="top" secondItem="3Y3-Fx-TwW" secondAttribute="bottom" constant="8" id="LFJ-tf-IsU"/>
                             <constraint firstItem="n0g-i3-Ou4" firstAttribute="trailing" secondItem="e2w-uY-y7I" secondAttribute="trailingMargin" id="Olm-l6-4gc"/>
                             <constraint firstItem="BUn-OZ-7PL" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="QEM-gj-rFN"/>
                             <constraint firstItem="Nxd-zi-Sge" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="Qdd-ny-ucC"/>
                             <constraint firstItem="g2V-yI-Quo" firstAttribute="top" secondItem="abe-EF-Yjf" secondAttribute="bottom" constant="8" id="Rfg-Oa-KVC"/>
                             <constraint firstItem="csZ-hp-kYp" firstAttribute="trailing" secondItem="e2w-uY-y7I" secondAttribute="trailingMargin" id="U9m-Bu-Ams"/>
-                            <constraint firstItem="mJv-rk-zD6" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="ZGS-w0-DIF"/>
                             <constraint firstItem="Nxd-zi-Sge" firstAttribute="top" secondItem="BUn-OZ-7PL" secondAttribute="bottom" constant="8" id="evi-W8-0V9"/>
                             <constraint firstItem="csZ-hp-kYp" firstAttribute="top" secondItem="g2V-yI-Quo" secondAttribute="bottom" constant="8" id="jIL-bj-4PR"/>
                             <constraint firstItem="csZ-hp-kYp" firstAttribute="trailing" secondItem="e2w-uY-y7I" secondAttribute="trailingMargin" id="jJ6-v4-aD3"/>
@@ -170,7 +174,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="MaV-xW-qJI"/>
                     <connections>
-                        <outlet property="saveButton" destination="mJv-rk-zD6" id="Noj-o5-oIT"/>
                         <outlet property="savedTable" destination="csZ-hp-kYp" id="iSf-U2-VN1"/>
                         <outlet property="segCtrl" destination="n0g-i3-Ou4" id="Tgg-Jd-iH5"/>
                     </connections>
