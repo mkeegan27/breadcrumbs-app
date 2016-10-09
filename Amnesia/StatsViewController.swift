@@ -33,6 +33,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         dataTypes = [String]()
         data = [Double]()
         colors = [UIColor]()
+        locationLabel.text = ""
         newData = [barChartDataPoint]()
         setChartData()
         setChart(dataPoints: newData)
@@ -59,6 +60,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         chartData.setDrawValues(false)
         
         barChartView.leftAxis.axisMinValue = 0
+        barChartView.leftAxis.enabled = false
         barChartView.data = chartData
         barChartView.descriptionText = ""
 //        barChartView.xAxis.labelPosition = .bottom
@@ -116,13 +118,14 @@ class StatsViewController: UIViewController, ChartViewDelegate {
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         locationLabel.text = newData[Int(entry.x)].dataType
-        print(newData[Int(entry.x)])
+//        print(newData[Int(entry.x)])
 
     }
     
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        print("nothing")
+//        print("nothing")
+        locationLabel.text = ""
     }
     
     struct barChartDataPoint {
