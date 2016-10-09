@@ -135,10 +135,10 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView,
                    editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        let block = UITableViewRowAction(style: .normal, title: "Block") { action, index in
-//            print("Block")
-//            LogMgr.logset.remove(at: indexPath.row)
-//        }
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            print("Edit")
+            LogMgr.logset.remove(at: indexPath.row)
+        }
         let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
             //print("Delete")
             newLocations.dataPoints.remove(at: indexPath.row)
@@ -147,7 +147,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             //delete function does not work all the time
             //also does not delete map annotations
         }
-        return [delete]
+        return [edit, delete]
 //        LogMgr.logset.remove(at: indexPath.row)
 //        tblV.reloadData()
     }
