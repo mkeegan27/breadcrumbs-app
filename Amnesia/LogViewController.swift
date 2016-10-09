@@ -21,6 +21,11 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tblV.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //LogMgr.addLoc(GPSNew: 0, locationNameNew: 0, timeBeginNew: 0, timeEndNew: 0)
@@ -160,6 +165,8 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 savedEntriesDict[newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName] = newSaveName
                 self.tblV.reloadData()
                 //print("Text field: \(textField.text)")
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in
             }))
             
             // 4. Present the alert.
