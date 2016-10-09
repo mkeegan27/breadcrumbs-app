@@ -34,6 +34,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         else{
             descSaveLabel.text = "Here are all the places you've saved."
         }
+        descSaveLabel.adjustsFontSizeToFitWidth = true
         savedTable.reloadData()
     }
     
