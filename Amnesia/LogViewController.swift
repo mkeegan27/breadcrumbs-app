@@ -114,7 +114,14 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let timeSpent = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].timeSpent
         let timeStart = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].startTimestamp
         
-        cell.changeLabelText(newText: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)
+        let newName = savedEntriesDict[newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName]
+        
+        if (newName != nil){
+            cell.changeLabelText(newText: newName!)
+        }
+        else{
+            cell.changeLabelText(newText: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)
+        }
         //cell.changeTimeText(newText: getTimeLabel(secs: timeSpent))
         
         let dateFormatter = DateFormatter()
@@ -135,9 +142,30 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView,
                    editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
-            print("Edit")
-            LogMgr.logset.remove(at: indexPath.row)
+        let edit = UITableViewRowAction(style: .normal, title: "Save") { action, index in
+            //print("Save")
+            var newSaveName: String = ""
+            //1. Create the alert controller.
+            var alert = UIAlertController(title: "Some Title", message: "Save \"\(newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)\" as what?", preferredStyle: .alert)
+            
+            //2. Add the text field. You can configure it however you need.
+            alert.addTextField(configurationHandler: { (textField) -> Void in
+                textField.text = ""
+            })
+            
+            //3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                let textField = alert.textFields![0] as UITextField
+                newSaveName = textField.text!
+                savedEntriesDict[newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName] = newSaveName
+                self.tblV.reloadData()
+                //print("Text field: \(textField.text)")
+            }))
+            
+            // 4. Present the alert.
+            self.present(alert, animated: true, completion: nil)
+            
+            
         }
         let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
             //print("Delete")
@@ -147,7 +175,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             //delete function does not work all the time
             //also does not delete map annotations
         }
-        return [edit, delete]
+        return [delete, edit]
 //        LogMgr.logset.remove(at: indexPath.row)
 //        tblV.reloadData()
     }
