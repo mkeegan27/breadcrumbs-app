@@ -253,8 +253,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a7b-yt-vTM"/>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBi-yk-9R6">
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBi-yk-9R6">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rBi-yk-9R6" secondAttribute="height" multiplier="1:1" id="0vc-DA-Y2Q"/>
+                                    <constraint firstAttribute="width" constant="50" id="Dds-c3-O8J"/>
+                                </constraints>
+                                <state key="normal" image="iTunesArtwork"/>
                                 <connections>
                                     <action selector="exitAction:" destination="dbV-CN-sN0" eventType="touchUpInside" id="Tpd-Jx-Doe"/>
                                 </connections>
@@ -266,8 +270,8 @@
                             <constraint firstAttribute="bottom" secondItem="a7b-yt-vTM" secondAttribute="bottom" id="ZsN-9d-k0k"/>
                             <constraint firstAttribute="trailing" secondItem="a7b-yt-vTM" secondAttribute="trailing" id="aUr-1T-CQy"/>
                             <constraint firstItem="a7b-yt-vTM" firstAttribute="top" secondItem="3d6-gH-ksh" secondAttribute="top" id="hSi-L8-MDV"/>
-                            <constraint firstItem="rBi-yk-9R6" firstAttribute="centerX" secondItem="3d6-gH-ksh" secondAttribute="centerX" id="ohr-tz-JiS"/>
                             <constraint firstItem="rBi-yk-9R6" firstAttribute="top" secondItem="rAE-hF-vGF" secondAttribute="bottom" id="pl4-MX-2pD"/>
+                            <constraint firstItem="rBi-yk-9R6" firstAttribute="leading" secondItem="a7b-yt-vTM" secondAttribute="leading" constant="20" id="riX-1b-Wqh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -278,7 +282,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1l-hK-CU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="aXf-BJ-Kik" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1546" y="1194"/>
+            <point key="canvasLocation" x="-1546.4000000000001" y="1193.2533733133434"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="GTm-op-xEF">
@@ -303,6 +307,7 @@
     </scenes>
     <resources>
         <image name="chart" width="18" height="18"/>
+        <image name="iTunesArtwork" width="512" height="512"/>
         <image name="log" width="18" height="18"/>
         <image name="map" width="18" height="18"/>
         <image name="mapmarker" width="2000" height="3070"/>
