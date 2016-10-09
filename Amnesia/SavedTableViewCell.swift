@@ -10,6 +10,7 @@ import UIKit
 
 class SavedTableViewCell: UITableViewCell {
     @IBOutlet weak var saveNameLabel: UILabel!
+    @IBOutlet weak var oldNameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,9 @@ class SavedTableViewCell: UITableViewCell {
 
     func changeSaveLabel(newText: String){
         saveNameLabel.text = newText
+    }
+    func changeOldNameLabel(newText: String){
+        oldNameLabel.text = newText
     }
 
 }

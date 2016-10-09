@@ -25,6 +25,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        savedTable.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savedEntriesDict.count
     }
@@ -33,16 +38,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = self.savedTable.dequeueReusableCell(withIdentifier: "saveCell") as! SavedTableViewCell
         //let index = savedEntriesDict.startIndex.advancedBy(indexPath.row)
         //cell.changeOGLabel(newText: "")
-        cell.changeSaveLabel(newText: "\(Array(savedEntriesDict.values)[indexPath.row]): \(Array(savedEntriesDict.keys)[indexPath.row])")
+        cell.changeSaveLabel(newText: "\(Array(savedEntriesDict.values)[indexPath.row]):")
+        cell.changeOldNameLabel(newText: Array(savedEntriesDict.keys)[indexPath.row])
         return cell
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func saveButtonPressed(_ sender: UIButton) {
+    @IBAction func segChanged(_ sender: UISegmentedControl) {
         let sel: Int = segCtrl.selectedSegmentIndex
         if(sel==0){
             timeCheckInt = 1
@@ -68,7 +69,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         else{
             timeCheckInt = 7200
         }
+
         
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     /*
