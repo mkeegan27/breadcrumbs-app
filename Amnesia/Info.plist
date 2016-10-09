@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>BreadCrumbs</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,10 +22,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>To collect memory locations</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>To collect memory locations</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>To collect memory locations</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To collect memory locations</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
