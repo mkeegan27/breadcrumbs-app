@@ -24,6 +24,28 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         NotificationCenter.default.post(name: stoMap, object: nil)
+        
+//        var dateComponents = DateComponents()
+//        dateComponents.year = 2016
+//        dateComponents.month = 10
+//        dateComponents.day = 8
+//        dateComponents.timeZone = TimeZone(abbreviation: "EST")
+//        dateComponents.hour = 8
+//        dateComponents.minute = 34
+//        var userCalendar = Calendar.current // user calendar
+//        var someDateTime = userCalendar.date(from: dateComponents)
+//        
+//        newLocations.addDataWithTimeframe(lat: 42.387264, long: -72.525996, timestamp: someDateTime!, locName: "Fine Arts Center", timeSp: 7320)
+//        dateComponents.hour = 10
+//        dateComponents.minute = 36
+//        userCalendar = Calendar.current // user calendar
+//        someDateTime = userCalendar.date(from: dateComponents)
+//        newLocations.addDataWithTimeframe(lat: 42.392429, long: -72.524763, timestamp: someDateTime!, locName: "Integrated Sciences Building", timeSp: 3000)
+//        dateComponents.hour = 11
+//        dateComponents.minute = 26
+//        userCalendar = Calendar.current // user calendar
+//        someDateTime = userCalendar.date(from: dateComponents)
+//        newLocations.addDataWithTimeframe(lat: 42.386190, long: -72.531143, timestamp: someDateTime!, locName: "Linden Hall", timeSp: 3600*3)
         tblV.reloadData()
     }
     
