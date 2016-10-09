@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import MapKit
 
 class SpecificMapViewController: UIViewController {
 
+    @IBOutlet weak var map: MKMapView!
     @IBAction func exitAction(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "unwindToTableView", sender: self)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(specificRegion)
+        map.setRegion(specificRegion, animated: false)
+        //        if(setLocation){
+        //            self.map.setRegion(region, animated: true)
+        //        //    setLocation = true
+        //        }
         // Do any additional setup after loading the view.
     }
 

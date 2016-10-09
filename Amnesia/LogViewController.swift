@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 import AddressBookUI
 
+var specificRegion:MKCoordinateRegion = MKCoordinateRegion()
+
 class LogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tblV: UITableView!
@@ -150,6 +152,20 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
 //        tblV.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dataPoint = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1]
+        let latitude:CLLocationDegrees = dataPoint.lat
+        let longitude:CLLocationDegrees = dataPoint.long
+        let latDelta:CLLocationDegrees = 0.05
+        let lonDelta:CLLocationDegrees = 0.05
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        //        map.setRegion(region, animated: false)
+        specificRegion = region
+        performSegue(withIdentifier: "toMap", sender: self)
+//        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+    }
 
     func getTimeLabel(secs: Int) -> String {
         if secs < 60 {

@@ -213,7 +213,6 @@
                                         <connections>
                                             <outlet property="testLabel" destination="n0p-hT-DNA" id="2WW-lY-N4b"/>
                                             <outlet property="timeLabel" destination="Ug1-OU-8G8" id="IVE-hG-EoT"/>
-                                            <segue destination="dbV-CN-sN0" kind="show" identifier="" id="Jve-Iq-lfE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -234,6 +233,7 @@
                     <tabBarItem key="tabBarItem" title="My Places" image="log" selectedImage="log" id="Mff-0U-AcS"/>
                     <connections>
                         <outlet property="tblV" destination="4EM-bc-Occ" id="kTb-4A-0Xz"/>
+                        <segue destination="dbV-CN-sN0" kind="show" identifier="toMap" id="aT8-f7-cd4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCZ-6N-4nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,6 +252,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a7b-yt-vTM"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBi-yk-9R6">
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -261,18 +262,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="a7b-yt-vTM" firstAttribute="leading" secondItem="3d6-gH-ksh" secondAttribute="leading" id="Bca-vw-lDK"/>
+                            <constraint firstAttribute="bottom" secondItem="a7b-yt-vTM" secondAttribute="bottom" id="ZsN-9d-k0k"/>
+                            <constraint firstAttribute="trailing" secondItem="a7b-yt-vTM" secondAttribute="trailing" id="aUr-1T-CQy"/>
+                            <constraint firstItem="a7b-yt-vTM" firstAttribute="top" secondItem="3d6-gH-ksh" secondAttribute="top" id="hSi-L8-MDV"/>
                             <constraint firstItem="rBi-yk-9R6" firstAttribute="centerX" secondItem="3d6-gH-ksh" secondAttribute="centerX" id="ohr-tz-JiS"/>
                             <constraint firstItem="rBi-yk-9R6" firstAttribute="top" secondItem="rAE-hF-vGF" secondAttribute="bottom" id="pl4-MX-2pD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="map" destination="a7b-yt-vTM" id="f3c-vJ-hkH"/>
                         <segue destination="aXf-BJ-Kik" kind="unwind" identifier="unwindToTableView" unwindAction="unwindToTableViewWithSegue:" id="uF7-zF-klg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1l-hK-CU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="aXf-BJ-Kik" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1559" y="1194"/>
+            <point key="canvasLocation" x="-1546" y="1194"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="GTm-op-xEF">
