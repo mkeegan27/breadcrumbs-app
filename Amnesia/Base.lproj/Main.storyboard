@@ -213,7 +213,7 @@
                                         <connections>
                                             <outlet property="testLabel" destination="n0p-hT-DNA" id="2WW-lY-N4b"/>
                                             <outlet property="timeLabel" destination="Ug1-OU-8G8" id="IVE-hG-EoT"/>
-                                            <segue destination="dbV-CN-sN0" kind="show" id="6Pf-Nm-BVj"/>
+                                            <segue destination="dbV-CN-sN0" kind="show" identifier="" id="Jve-Iq-lfE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -265,8 +265,12 @@
                             <constraint firstItem="rBi-yk-9R6" firstAttribute="top" secondItem="rAE-hF-vGF" secondAttribute="bottom" id="pl4-MX-2pD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="aXf-BJ-Kik" kind="unwind" identifier="unwindToTableView" unwindAction="unwindToTableViewWithSegue:" id="uF7-zF-klg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1l-hK-CU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aXf-BJ-Kik" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1559" y="1194"/>
         </scene>

@@ -11,7 +11,7 @@ import UIKit
 class SpecificMapViewController: UIViewController {
 
     @IBAction func exitAction(_ sender: AnyObject) {
-        
+        self.performSegue(withIdentifier: "unwindToTableView", sender: self)
         
     }
     override func viewDidLoad() {

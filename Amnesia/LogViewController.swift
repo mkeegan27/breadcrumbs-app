@@ -15,6 +15,9 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var tblV: UITableView!
     var refreshControl: UIRefreshControl!
     
+    @IBAction func unwindToTableView(segue:UIStoryboardSegue) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
