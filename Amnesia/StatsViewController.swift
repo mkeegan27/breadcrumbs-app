@@ -19,6 +19,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
     
     var newData = [barChartDataPoint]()
     
+    @IBOutlet weak var locationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +115,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        
+        locationLabel.text = newData[Int(entry.x)].dataType
         print(newData[Int(entry.x)])
 
     }

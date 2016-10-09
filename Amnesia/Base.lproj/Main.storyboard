@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,20 +22,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUV-Ew-V8V" customClass="BarChartView" customModule="Charts">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbA-S7-euN">
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mbA-S7-euN" firstAttribute="centerX" secondItem="yUV-Ew-V8V" secondAttribute="centerX" id="cwG-Mz-XhM"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qyq-zz-p3D" firstAttribute="top" secondItem="yUV-Ew-V8V" secondAttribute="bottom" id="9Ge-Tm-f3P"/>
+                            <constraint firstItem="mbA-S7-euN" firstAttribute="top" secondItem="mnh-Os-TRh" secondAttribute="bottom" constant="8" id="Mp8-wc-zMl"/>
                             <constraint firstAttribute="leadingMargin" secondItem="yUV-Ew-V8V" secondAttribute="leading" id="lNa-8l-Run"/>
                             <constraint firstItem="yUV-Ew-V8V" firstAttribute="top" secondItem="mnh-Os-TRh" secondAttribute="bottom" id="oPZ-x6-jJh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yUV-Ew-V8V" secondAttribute="trailing" id="pAa-Ki-mrc"/>
+                            <constraint firstItem="mbA-S7-euN" firstAttribute="width" secondItem="YgB-GI-xFo" secondAttribute="width" multiplier="0.8" id="pSH-ym-0pk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" image="chart" selectedImage="chart" id="J5w-Q4-i0r"/>
                     <connections>
                         <outlet property="barChartView" destination="yUV-Ew-V8V" id="afT-CK-FrG"/>
+                        <outlet property="locationLabel" destination="mbA-S7-euN" id="gek-bB-I3E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ply-8P-bQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
