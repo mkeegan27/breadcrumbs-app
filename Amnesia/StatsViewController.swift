@@ -60,6 +60,9 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         chartData.setDrawValues(false)
         
         barChartView.leftAxis.axisMinValue = 0
+        barChartView.xAxis.axisMaximum = Double(newData.count) - 0.5
+        barChartView.xAxis.axisMinimum = -0.5
+        
         barChartView.leftAxis.enabled = false
         barChartView.data = chartData
         barChartView.descriptionText = ""
@@ -73,7 +76,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         barChartView.leftAxis.enabled = true
         barChartView.leftAxis.labelTextColor = UIColor.black
         barChartView.highlightPerTapEnabled = true
-        barChartView.doubleTapToZoomEnabled = false
+        barChartView.doubleTapToZoomEnabled = true
         barChartView.data?.highlightEnabled = true
         //        barChartView.xAxis.drawGridLinesEnabled = false
         //        barChartView.leftAxis.drawGridLinesEnabled = false
