@@ -107,9 +107,15 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.tblV.dequeueReusableCell(withIdentifier: "LogCell") as! LogTableViewCell
         let timeSpent = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].timeSpent
+        let timeStart = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].startTimestamp
         
         cell.changeLabelText(newText: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)
-        cell.changeTimeText(newText: getTimeLabel(secs: timeSpent))
+        //cell.changeTimeText(newText: getTimeLabel(secs: timeSpent))
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm"
+        let str_from_date = dateFormatter.string(from: newLocations.dataPoints[indexPath.row].startTimestamp)
+        cell.changeTimeText(newText: getTimeLabel(secs: timeSpent) + " from " + str_from_date + " until " + dateFormatter.string(from: timeStart.addingTimeInterval(TimeInterval(timeSpent))))
         cell.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 122/255, blue: 254/255, alpha: Float(timeSpent)/Float(newLocations.longestTime)*0.8)
         return cell
     }
