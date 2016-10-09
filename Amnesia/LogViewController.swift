@@ -207,7 +207,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         }
         let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
             //print("Delete")
-            newLocations.dataPoints.remove(at: indexPath.row)
+            newLocations.dataPoints.remove(at: newLocations.dataPoints.count - indexPath.row - 1)
             //self.tblV.reloadData()
             //print("Delete \(newLocations.dataPoints.count)")
             if(timeCheckInt>3){
