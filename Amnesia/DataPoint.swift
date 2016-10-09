@@ -24,6 +24,13 @@ struct DataPoint {
         self.locName = locName
         timeSpent = timeCheckInt
     }
+    init(lat:CLLocationDegrees, long:CLLocationDegrees, timestamp:Date, locName:String, timeSp:Int) {
+        self.lat = lat
+        self.long = long
+        self.startTimestamp = timestamp
+        self.locName = locName
+        timeSpent = timeSp
+    }
 }
 
 struct LocationData {
@@ -43,6 +50,9 @@ struct LocationData {
             }
         }
         dataPoints.append(DataPoint(lat: lat, long: long, timestamp: timestamp, locName: locName))
+    }
+    mutating func addDataWithTimeframe(lat:CLLocationDegrees, long:CLLocationDegrees, timestamp:Date, locName:String, timeSp:Int){
+        dataPoints.append(DataPoint(lat: lat, long: long, timestamp: timestamp, locName: locName, timeSp:timeSp))
     }
     
 

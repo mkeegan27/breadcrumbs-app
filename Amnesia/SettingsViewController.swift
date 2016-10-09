@@ -12,6 +12,7 @@ var savedEntriesDict = [String:String]() //maps default name to saved name
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var descSaveLabel: UILabel!
     @IBOutlet weak var savedTable: UITableView!
     
     @IBOutlet weak var segCtrl: UISegmentedControl!
@@ -27,6 +28,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        if(savedEntriesDict.count == 0){
+            descSaveLabel.text = "Slide a log entry to the left to save the location under a new name!"
+        }
+        else{
+            descSaveLabel.text = "Here are all the places you've saved."
+        }
         savedTable.reloadData()
     }
     
@@ -42,6 +49,26 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.changeOldNameLabel(newText: Array(savedEntriesDict.keys)[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView,
+                   editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
+            //print("Delete")
+            savedEntriesDict.removeValue(forKey: Array(savedEntriesDict.keys)[indexPath.row])
+            newLocations.dataPoints.remove(at: indexPath.row)
+            //self.tblV.reloadData()
+            //print("Delete \(newLocations.dataPoints.count)")
+                self.savedTable.deleteRows(at: [indexPath], with: .fade)
+
+            //self.tblV.reloadData()
+            //delete function does not work all the time
+            //also does not delete map annotations
+        }
+        return [delete]
+
+            
+            
+        }
 
     @IBAction func segChanged(_ sender: UISegmentedControl) {
         let sel: Int = segCtrl.selectedSegmentIndex
