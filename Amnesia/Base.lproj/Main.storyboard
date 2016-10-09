@@ -275,6 +275,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="rBi-yk-9R6" id="II4-2h-EIO"/>
                         <outlet property="map" destination="a7b-yt-vTM" id="f3c-vJ-hkH"/>
                         <segue destination="aXf-BJ-Kik" kind="unwind" identifier="unwindToTableView" unwindAction="unwindToTableViewWithSegue:" id="uF7-zF-klg"/>
                     </connections>

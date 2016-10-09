@@ -11,6 +11,7 @@ import MapKit
 
 class SpecificMapViewController: UIViewController {
 
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var map: MKMapView!
     @IBAction func exitAction(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "unwindToTableView", sender: self)
@@ -18,6 +19,11 @@ class SpecificMapViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let origImage = UIImage(named: "circleBack");
+        let tintedImage = origImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        backButton.setImage(tintedImage, for: .normal)
+        backButton.tintColor = UIColor(colorLiteralRed: 14/255, green: 122/255, blue: 254/255, alpha: 1.0)
+        
         let latitude:CLLocationDegrees = selectedDataPoint.lat
         let longitude:CLLocationDegrees = selectedDataPoint.long
         let latDelta:CLLocationDegrees = 0.05
