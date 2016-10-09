@@ -23,7 +23,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUV-Ew-V8V" customClass="BarChartView" customModule="Charts">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbA-S7-euN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="mbA-S7-euN">
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n00-hN-LEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2268" y="637.33133433283365"/>
+            <point key="canvasLocation" x="-2754" y="395"/>
         </scene>
         <!--LogViewController-->
         <scene sceneID="Qrl-Dw-GnF">
@@ -213,6 +213,7 @@
                                         <connections>
                                             <outlet property="testLabel" destination="n0p-hT-DNA" id="2WW-lY-N4b"/>
                                             <outlet property="timeLabel" destination="Ug1-OU-8G8" id="IVE-hG-EoT"/>
+                                            <segue destination="dbV-CN-sN0" kind="show" id="6Pf-Nm-BVj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -237,7 +238,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCZ-6N-4nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1559" y="637"/>
+            <point key="canvasLocation" x="-2260" y="1195"/>
+        </scene>
+        <!--Specific Map View Controller-->
+        <scene sceneID="QW5-Ex-K6F">
+            <objects>
+                <viewController id="dbV-CN-sN0" customClass="SpecificMapViewController" customModule="Amnesia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rAE-hF-vGF"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZMz-d1-fPG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3d6-gH-ksh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBi-yk-9R6">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="exitAction:" destination="dbV-CN-sN0" eventType="touchUpInside" id="Tpd-Jx-Doe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rBi-yk-9R6" firstAttribute="centerX" secondItem="3d6-gH-ksh" secondAttribute="centerX" id="ohr-tz-JiS"/>
+                            <constraint firstItem="rBi-yk-9R6" firstAttribute="top" secondItem="rAE-hF-vGF" secondAttribute="bottom" id="pl4-MX-2pD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M1l-hK-CU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1559" y="1194"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="GTm-op-xEF">

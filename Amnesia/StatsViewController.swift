@@ -33,7 +33,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         dataTypes = [String]()
         data = [Double]()
         colors = [UIColor]()
-        locationLabel.text = ""
+        locationLabel.text = "Places"
         newData = [barChartDataPoint]()
         setChartData()
         setChart(dataPoints: newData)
@@ -76,7 +76,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         barChartView.leftAxis.enabled = true
         barChartView.leftAxis.labelTextColor = UIColor.black
         barChartView.highlightPerTapEnabled = true
-        barChartView.doubleTapToZoomEnabled = true
+        barChartView.doubleTapToZoomEnabled = false
         barChartView.data?.highlightEnabled = true
         //        barChartView.xAxis.drawGridLinesEnabled = false
         //        barChartView.leftAxis.drawGridLinesEnabled = false
@@ -128,7 +128,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
 //        print("nothing")
-        locationLabel.text = ""
+        locationLabel.text = "Places"
     }
     
     struct barChartDataPoint {
