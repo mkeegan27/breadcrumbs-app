@@ -23,7 +23,13 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        NotificationCenter.default.post(name: stoMap, object: nil)
         tblV.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        NotificationCenter.default.post(name: staMap, object: nil)
     }
     
     override func viewDidLoad() {
@@ -131,7 +137,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm"
-        let str_from_date = dateFormatter.string(from: newLocations.dataPoints[indexPath.row].startTimestamp)
+        let str_from_date = dateFormatter.string(from: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].startTimestamp)
         cell.changeTimeText(newText: getTimeLabel(secs: timeSpent) + " from " + str_from_date + " until " + dateFormatter.string(from: timeStart.addingTimeInterval(TimeInterval(timeSpent))))
         cell.backgroundColor = UIColor(colorLiteralRed: 14/255, green: 122/255, blue: 254/255, alpha: Float(timeSpent)/Float(newLocations.longestTime)*0.8)
         return cell
@@ -142,7 +148,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
+
     }
     
     func tableView(_ tableView: UITableView,
@@ -150,6 +156,8 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let edit = UITableViewRowAction(style: .normal, title: "Save") { action, index in
             //print("Save")
             var newSaveName: String = ""
+            
+            
             //1. Create the alert controller.
             var alert = UIAlertController(title: "Some Title", message: "Save \"\(newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)\" as what?", preferredStyle: .alert)
             
@@ -164,6 +172,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 newSaveName = textField.text!
                 savedEntriesDict[newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName] = newSaveName
                 self.tblV.reloadData()
+                //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "STARTMAP"), object: nil)
                 //print("Text field: \(textField.text)")
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) -> Void in

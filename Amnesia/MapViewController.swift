@@ -14,6 +14,9 @@ var allLocations = Locations()
 var newLocations = LocationData()
 var count: Int = 0
 
+let staMap = Notification.Name("STOPMAP")
+let stoMap = Notification.Name("STARTMAP")
+
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     
@@ -52,9 +55,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
         setLocation = true
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(stopMap(notification:)), name: stoMap, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(startMap(notification:)), name: staMap, object: nil)
+
+
     }
     
+    dynamic func stopMap(notification: NSNotification){
+        //Take Action on Notification
+        manager.stopUpdatingLocation()
+    }
+    
+    dynamic func startMap(notification: NSNotification){
+        //Take Action on Notification
+        manager.startUpdatingLocation()
+    }
     
     @IBAction func locButtonPressed(_ sender: UIButton) {
 //        if(setLocation){

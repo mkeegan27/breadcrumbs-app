@@ -1,2 +1,4 @@
-.tap on cell and go to map
-.save places as custom names, save list of it in settings
+things that are not working:
+  saving custom locations gets buggy
+
+-button in settings to auto save location
