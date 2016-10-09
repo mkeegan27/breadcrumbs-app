@@ -170,8 +170,15 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
         let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
             //print("Delete")
             newLocations.dataPoints.remove(at: indexPath.row)
-            self.tblV.reloadData()
-            
+            //self.tblV.reloadData()
+            //print("Delete \(newLocations.dataPoints.count)")
+            if(timeCheckInt>3){
+            self.tblV.deleteRows(at: [indexPath], with: .fade)
+            }
+            else{
+                self.tblV.reloadData()
+            }
+            //self.tblV.reloadData()
             //delete function does not work all the time
             //also does not delete map annotations
         }
