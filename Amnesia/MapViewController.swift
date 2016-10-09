@@ -73,7 +73,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
 //        var locValue:CLLocationCoordinate2D = manager.location.coordinate
 //        //userLocation - there is no need for casting, because we are now using CLLocation object
-//        
+//      
+        if(count==timeCheckInt){
         let userLocation:CLLocation = locations[0]
         let latitude:CLLocationDegrees = userLocation.coordinate.latitude
         let longitude:CLLocationDegrees = userLocation.coordinate.longitude
@@ -94,6 +95,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //        //    setLocation = true
 //        }
         
+        
+            
         for value in newLocations.dataPoints{
             
             let newCoord:CLLocation = CLLocation(latitude: value.lat, longitude: value.long)
@@ -108,7 +111,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             map.addAnnotation(newAnotation)
         }
         
-        if(count==timeCheckInt){
+        
             reverseGeoCode(location: CLLocation(latitude: latitude, longitude: longitude))
             count = 0
         }
