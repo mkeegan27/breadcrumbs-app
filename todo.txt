@@ -1,10 +1,2 @@
--title
--settings to actually do something
--add more settings
--maybe improve charts
--make cells look nicer
--change label to time interval
-
-extras:
--search
--set something as "home", "work"
+.tap on cell and go to map
+.save places as custom names, save list of it in settings
