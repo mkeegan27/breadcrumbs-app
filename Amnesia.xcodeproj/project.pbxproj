@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3FC8801DAA07F20072A00F /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FC87F1DAA07F20072A00F /* SavedTableViewCell.swift */; };
 		1F6F2FEC1DA93CC200845659 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F2FEB1DA93CC200845659 /* AppDelegate.swift */; };
 		1F6F2FF11DA93CC200845659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F2FEF1DA93CC200845659 /* Main.storyboard */; };
 		1F6F2FF31DA93CC200845659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F2FF21DA93CC200845659 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F3FC87F1DAA07F20072A00F /* SavedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		1F6F2FE81DA93CC200845659 /* Amnesia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amnesia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6F2FEB1DA93CC200845659 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F6F2FF01DA93CC200845659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				1F6F2FEB1DA93CC200845659 /* AppDelegate.swift */,
 				1FF2D0AF1DA9A958000C643C /* SettingsViewController.swift */,
+				1F3FC87F1DAA07F20072A00F /* SavedTableViewCell.swift */,
 				1F6F2FEF1DA93CC200845659 /* Main.storyboard */,
 				8672ACEE1DA9DCAD00DB3649 /* SpecificMapViewController.swift */,
 				86C41BB41DA960500006FBAF /* StatsViewController.swift */,
@@ -279,6 +282,7 @@
 				1F6F2FEC1DA93CC200845659 /* AppDelegate.swift in Sources */,
 				1F6F30041DA9428700845659 /* LogTableViewCell.swift in Sources */,
 				86C41BB51DA960500006FBAF /* StatsViewController.swift in Sources */,
+				1F3FC8801DAA07F20072A00F /* SavedTableViewCell.swift in Sources */,
 				8672ACEF1DA9DCAD00DB3649 /* SpecificMapViewController.swift in Sources */,
 				86C41B9B1DA947190006FBAF /* MapViewController.swift in Sources */,
 				86C41BCA1DA986FB0006FBAF /* DataPoint.swift in Sources */,

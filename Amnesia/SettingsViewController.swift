@@ -10,8 +10,9 @@ import UIKit
 
 var savedEntriesDict = [String:String]() //maps default name to saved name
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var savedTable: UITableView!
     
     @IBOutlet weak var segCtrl: UISegmentedControl!
     
@@ -22,6 +23,18 @@ class SettingsViewController: UIViewController {
         let attr = NSDictionary(object: UIFont(name: "Arial", size: 12.0)!, forKey: NSFontAttributeName as NSCopying)
         segCtrl.setTitleTextAttributes(attr as? [AnyHashable : Any], for: .normal)
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return savedEntriesDict.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.savedTable.dequeueReusableCell(withIdentifier: "saveCell") as! SavedTableViewCell
+        //let index = savedEntriesDict.startIndex.advancedBy(indexPath.row)
+        //cell.changeOGLabel(newText: "")
+        cell.changeSaveLabel(newText: "\(Array(savedEntriesDict.values)[indexPath.row]): \(Array(savedEntriesDict.keys)[indexPath.row])")
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
