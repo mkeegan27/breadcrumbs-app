@@ -101,14 +101,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let newCoord:CLLocation = CLLocation(latitude: value.lat, longitude: value.long)
             
-            let newAnotation = MKPointAnnotation()
-            newAnotation.coordinate = newCoord.coordinate
-            newAnotation.title = value.locName
+            let newAnnotation = MKPointAnnotation()
+            newAnnotation.coordinate = newCoord.coordinate
+            
+            let newName = savedEntriesDict[value.locName]
+            
+            if (newName != nil){
+               newAnnotation.title = newName
+            }
+            else{
+                newAnnotation.title = value.locName
+            }
+            
+            //newAnotation.title = value.locName
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "hh:mm"
             let str_from_date = dateFormatter.string(from: value.startTimestamp)
-            newAnotation.subtitle = "from " + str_from_date + " until " + dateFormatter.string(from: value.startTimestamp.addingTimeInterval(TimeInterval(value.timeSpent)))
-            map.addAnnotation(newAnotation)
+            newAnnotation.subtitle = "from " + str_from_date + " until " + dateFormatter.string(from: value.startTimestamp.addingTimeInterval(TimeInterval(value.timeSpent)))
+            map.addAnnotation(newAnnotation)
         }
         
         
