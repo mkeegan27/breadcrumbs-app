@@ -67,7 +67,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How often do you want to record your location?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxd-zi-Sge">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How often do you want to drop a breadcrumb?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxd-zi-Sge">
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -149,16 +149,31 @@
                                     <outlet property="delegate" destination="GFw-tQ-bok" id="wtM-VO-mjJ"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About BreadCrumbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZZ-6G-nF0">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i31-mh-drs">
+                                <string key="text">BreadCrumbs helps you to keep an active log of your journeys. Always remember where you were at any given moment and view your most visited spots.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="i31-mh-drs" secondAttribute="trailing" id="6YL-U1-GHR"/>
                             <constraint firstItem="csZ-hp-kYp" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="7hB-zk-dMM"/>
                             <constraint firstItem="csZ-hp-kYp" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="A36-2d-wCg"/>
                             <constraint firstItem="abe-EF-Yjf" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="Dcb-5B-eRj"/>
+                            <constraint firstItem="i31-mh-drs" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="EHw-Gb-fIz"/>
+                            <constraint firstItem="abe-EF-Yjf" firstAttribute="top" secondItem="n0g-i3-Ou4" secondAttribute="bottom" constant="16" id="FfF-Ug-1bs"/>
                             <constraint firstItem="g2V-yI-Quo" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="ICs-XS-ss6"/>
+                            <constraint firstItem="BUn-OZ-7PL" firstAttribute="top" secondItem="i31-mh-drs" secondAttribute="bottom" constant="16" id="JMW-Yd-Eg3"/>
+                            <constraint firstItem="i31-mh-drs" firstAttribute="top" secondItem="MZZ-6G-nF0" secondAttribute="bottom" constant="8" id="Jlz-qx-fgD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g2V-yI-Quo" secondAttribute="trailing" id="KKL-xj-UeC"/>
-                            <constraint firstItem="abe-EF-Yjf" firstAttribute="top" secondItem="n0g-i3-Ou4" secondAttribute="bottom" constant="48.5" id="Ki2-H4-c9u"/>
-                            <constraint firstItem="BUn-OZ-7PL" firstAttribute="top" secondItem="3Y3-Fx-TwW" secondAttribute="bottom" constant="8" id="LFJ-tf-IsU"/>
+                            <constraint firstItem="MZZ-6G-nF0" firstAttribute="top" secondItem="3Y3-Fx-TwW" secondAttribute="bottom" constant="8" id="MYa-wv-pZG"/>
                             <constraint firstItem="n0g-i3-Ou4" firstAttribute="trailing" secondItem="e2w-uY-y7I" secondAttribute="trailingMargin" id="Olm-l6-4gc"/>
                             <constraint firstItem="BUn-OZ-7PL" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="QEM-gj-rFN"/>
                             <constraint firstItem="Nxd-zi-Sge" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="Qdd-ny-ucC"/>
@@ -167,7 +182,9 @@
                             <constraint firstItem="Nxd-zi-Sge" firstAttribute="top" secondItem="BUn-OZ-7PL" secondAttribute="bottom" constant="8" id="evi-W8-0V9"/>
                             <constraint firstItem="csZ-hp-kYp" firstAttribute="top" secondItem="g2V-yI-Quo" secondAttribute="bottom" constant="8" id="jIL-bj-4PR"/>
                             <constraint firstItem="csZ-hp-kYp" firstAttribute="trailing" secondItem="e2w-uY-y7I" secondAttribute="trailingMargin" id="jJ6-v4-aD3"/>
+                            <constraint firstItem="MZZ-6G-nF0" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="khY-fg-2aT"/>
                             <constraint firstItem="n0g-i3-Ou4" firstAttribute="top" secondItem="Nxd-zi-Sge" secondAttribute="bottom" constant="8" id="n3D-MS-d0X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MZZ-6G-nF0" secondAttribute="trailing" id="sXr-ns-Cul"/>
                             <constraint firstItem="n0g-i3-Ou4" firstAttribute="leading" secondItem="e2w-uY-y7I" secondAttribute="leadingMargin" id="u3I-9C-Gtu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="abe-EF-Yjf" secondAttribute="trailing" id="wOF-nj-ELv"/>
                         </constraints>
