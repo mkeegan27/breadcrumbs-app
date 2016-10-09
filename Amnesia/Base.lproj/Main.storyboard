@@ -308,7 +308,7 @@
     </scenes>
     <resources>
         <image name="chart" width="18" height="18"/>
-        <image name="circleBack" width="64" height="64"/>
+        <image name="circleBack" width="32" height="32"/>
         <image name="log" width="18" height="18"/>
         <image name="map" width="18" height="18"/>
         <image name="mapmarker" width="2000" height="3070"/>
