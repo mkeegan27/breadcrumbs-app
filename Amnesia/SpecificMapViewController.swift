@@ -18,12 +18,20 @@ class SpecificMapViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(specificRegion)
-        let newCoord:CLLocation = CLLocation(latitude: specificRegion.center.latitude, specificRegion.center.longitude)
+        let latitude:CLLocationDegrees = selectedDataPoint.lat
+        let longitude:CLLocationDegrees = selectedDataPoint.long
+        let latDelta:CLLocationDegrees = 0.05
+        let lonDelta:CLLocationDegrees = 0.05
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        let newCoord:CLLocation = CLLocation(latitude: region.center.latitude, longitude: region.center.longitude)
         let newAnotation = MKPointAnnotation()
         newAnotation.coordinate = newCoord.coordinate
-        newAnotation.title = value.locName
-        map.setRegion(specificRegion, animated: false)
+        newAnotation.title = selectedDataPoint.locName
+        map.addAnnotation(newAnotation)
+        map.setRegion(region, animated:false)
         //        if(setLocation){
         //            self.map.setRegion(region, animated: true)
         //        //    setLocation = true

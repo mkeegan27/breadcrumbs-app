@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import AddressBookUI
 
-var specificRegion:MKCoordinateRegion = MKCoordinateRegion()
+var selectedDataPoint:DataPoint = DataPoint(lat: 0.0, long: 0.0, timestamp: NSDate() as Date, locName: "Location")
 
 class LogViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -154,15 +154,8 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dataPoint = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1]
-        let latitude:CLLocationDegrees = dataPoint.lat
-        let longitude:CLLocationDegrees = dataPoint.long
-        let latDelta:CLLocationDegrees = 0.05
-        let lonDelta:CLLocationDegrees = 0.05
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
-        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        selectedDataPoint = dataPoint
         //        map.setRegion(region, animated: false)
-        specificRegion = region
         performSegue(withIdentifier: "toMap", sender: self)
 //        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
     }
