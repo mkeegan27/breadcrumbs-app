@@ -8,7 +8,10 @@
 
 import UIKit
 
+var savedEntriesDict = [String:String]() //maps default name to saved name
+
 class SettingsViewController: UIViewController {
+
     
     @IBOutlet weak var segCtrl: UISegmentedControl!
     
