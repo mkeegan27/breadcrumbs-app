@@ -16,10 +16,9 @@ struct Locations {
     mutating func addLocation(location:String, timestamp:NSDate, coord:CLLocation) {
         var isAlreadyInList = false
         var locInIndex = 0
-        let saveArray = valuesToArray()
-        if(saveArray.count > 0){
-        for el in 0...valuesToArray().count-1 {
-            if(valuesToArray()[el].reg.contains(coord.coordinate)){
+        if(allLocations2.count > 0){
+        for el in 0...allLocations2.count-1 {
+            if(allLocations2[el].reg.contains(coord.coordinate)){
                 isAlreadyInList = true
                 locInIndex = el
             }
@@ -27,7 +26,9 @@ struct Locations {
         }
         
         if !isAlreadyInList {
-            var newLocation = Alocation(seconds: 5, lastVisit: timestamp, locationName: location, loc: coord, reg: CLCircularRegion(center: coord.coordinate, radius: 0.01, identifier: location))
+            let newLocation = Alocation(seconds: 5, lastVisit: timestamp, locationName: location, loc: coord, reg: CLCircularRegion(center: coord.coordinate, radius: 0.0001, identifier: location))
+            print(allLocations2.count)
+            print(newLocation.locationName + "\n\n\n")
             /*
             newLocation.seconds = 5
             newLocation.lastVisit = timestamp

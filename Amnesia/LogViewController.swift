@@ -181,7 +181,7 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
             
             
             //1. Create the alert controller.
-            var alert = UIAlertController(title: "Some Title", message: "Save \"\(newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)\" as what?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Save Place", message: "Save \"\(newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)\" as what?", preferredStyle: .alert)
             
             //2. Add the text field. You can configure it however you need.
             alert.addTextField(configurationHandler: { (textField) -> Void in
@@ -194,8 +194,10 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 newSaveName = textField.text!
                 savedEntriesDict[newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName] = newSaveName
                 
+                //let tempLoc = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1]
+                
                 //save the place to the dict based on its location:
-                SavedPlacesDict[CLLocation(latitude: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].lat, longitude: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].long)] = newSaveName
+                //savedLocations.append(CLCircularRegion.init(center: CLLocationCoordinate2D.init(latitude: tempLoc.lat, longitude: tempLoc.long), radius: 160, identifier: tempLoc.locName))
                 
                 let saveCoord = CLLocationCoordinate2D(latitude: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].lat, longitude: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].long)
                 
