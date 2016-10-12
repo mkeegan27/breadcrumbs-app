@@ -49,6 +49,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = self.savedTable.dequeueReusableCell(withIdentifier: "saveCell") as! SavedTableViewCell
         //let index = savedEntriesDict.startIndex.advancedBy(indexPath.row)
         //cell.changeOGLabel(newText: "")
+        //LOAD FROM OTHER DATA STRUCTURE
         cell.changeSaveLabel(newText: "\(Array(savedEntriesDict.values)[indexPath.row]):")
         cell.changeOldNameLabel(newText: Array(savedEntriesDict.keys)[indexPath.row])
         return cell

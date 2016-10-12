@@ -144,17 +144,32 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.tblV.dequeueReusableCell(withIdentifier: "LogCell") as! LogTableViewCell
+        let tempLoc = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1]
         let timeSpent = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].timeSpent
         let timeStart = newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].startTimestamp
         
-        let newName = savedEntriesDict[newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName]
-        
-        if (newName != nil){
-            cell.changeLabelText(newText: newName!)
+        var savedPlace: CLCircularRegion? = nil
+        for element in savedLocations {
+            if(element.contains(tempLoc.reg.center)){
+                savedPlace = element
+            }
+        }
+        if savedPlace != nil{
+            cell.changeLabelText(newText: savedPlace!.identifier)
         }
         else{
-            cell.changeLabelText(newText: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)
+            cell.changeLabelText(newText: tempLoc.locName)
         }
+        
+        
+//        let newName = savedEntriesDict[newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName]
+//        
+//        if (newName != nil){
+//            cell.changeLabelText(newText: newName!)
+//        }
+//        else{
+//            cell.changeLabelText(newText: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName)
+//        }
         //cell.changeTimeText(newText: getTimeLabel(secs: timeSpent))
         
         let dateFormatter = DateFormatter()
