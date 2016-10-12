@@ -29,8 +29,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        let allAnnotations = self.map.annotations
-        self.map.removeAnnotations(allAnnotations)
+//        let allAnnotations = self.map.annotations
+//        self.map.removeAnnotations(allAnnotations)
     }
     
     
@@ -90,6 +90,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //        //userLocation - there is no need for casting, because we are now using CLLocation object
 //      
         if(count==timeCheckInt){
+            let allAnnotations = self.map.annotations
+            self.map.removeAnnotations(allAnnotations)
+            
         let userLocation:CLLocation = locations[0]
         let latitude:CLLocationDegrees = userLocation.coordinate.latitude
         let longitude:CLLocationDegrees = userLocation.coordinate.longitude

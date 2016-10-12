@@ -193,6 +193,17 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 let textField = alert.textFields![0] as UITextField
                 newSaveName = textField.text!
                 savedEntriesDict[newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].locName] = newSaveName
+                
+                //save the place to the dict based on its location:
+                SavedPlacesDict[CLLocation(latitude: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].lat, longitude: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].long)] = newSaveName
+                
+                let saveCoord = CLLocationCoordinate2D(latitude: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].lat, longitude: newLocations.dataPoints[newLocations.dataPoints.count - indexPath.row - 1].long)
+                
+                //save it to the array of clcircularregions
+                savedLocations.append(CLCircularRegion(center: saveCoord, radius: 0.01, identifier: newSaveName))
+                //I have no idea what the units of radius are, I think lat/long?
+                
+                
                 self.tblV.reloadData()
                 //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "STARTMAP"), object: nil)
                 //print("Text field: \(textField.text)")

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 var savedEntriesDict = [String:String]() //maps default name to saved name
+var SavedPlacesDict = [CLLocation:String]() //maps location to saved name
+var savedLocations = [CLCircularRegion]() //saves a bunch of circular regions
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
